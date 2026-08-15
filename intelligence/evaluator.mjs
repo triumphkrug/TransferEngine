@@ -1,0 +1,1 @@
+export function evaluate(lesson,target){const fields=['domain','factor','rule_version'];const reasons=[];for(const f of fields)if(lesson[f]!==target[f])reasons.push(`${f}: ${lesson[f]} != ${target[f]}`);if(target.threshold<lesson.threshold)reasons.push('threshold: target is stricter than source');return {outcome:reasons.length?'rejected':'applied',reasons}}

@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict';import {evaluate} from '../intelligence/evaluator.mjs';const l={domain:'fund',factor:'proof',threshold:.7,rule_version:'v1'};assert.equal(evaluate(l,{...l}).outcome,'applied');const bad=evaluate(l,{...l,domain:'other'});assert.equal(bad.outcome,'rejected');assert.match(bad.reasons[0],/domain/);console.log('transfer evaluator tests: PASS');
