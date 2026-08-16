@@ -1,0 +1,21 @@
+{
+  "status": "partial_mainnet_run",
+  "namespace": "walrus-session7/transfer-engine/triumphkrug/mainnet-evidence-v1",
+  "confirmed_by_cold_recall": [
+    {
+      "stage_id": "TE-01",
+      "sequence": 1,
+      "blob_id": "Qp43ckJNPSZ_hncHnKINCLkJAW7_lIg_6NSwBWfZFww",
+      "distance": 0.3941752459973702,
+      "event_sha256": "b92f03e15ec664597e62b7bae4efa7f20151bde855d82eb54c1b28c0d91ceff0"
+    },
+    {
+      "stage_id": "TE-02",
+      "sequence": 2,
+      "blob_id": "raPrcDCAbcezzgars2ow0Agx3dxafWAIx-t2xLeOYSI",
+      "distance": 0.40341029216924273,
+      "event_sha256": "5d25e9872d232d931c03bcb77ececb59fdbdfa33fc7216385ad70b2e4701c476"
+    }
+  ],
+  "known_failure": "third write job remains running with NO_SIDE_EFFECT funding error"
+}

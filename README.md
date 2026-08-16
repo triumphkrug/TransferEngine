@@ -41,3 +41,14 @@ TransferEngine/
 ## Video
 
 Show a risk lesson entering the compatibility gate twice: one case shares its risk context and is applied after a local scorer check; the other has a domain mismatch and is rejected with a reason. Add Mainnet receipt evidence only after actual confirmation.
+
+## Validation matrix
+
+| Domain | Unsafe shortcut | Final transfer condition | Fixture | Status |
+|---|---|---|---|---|
+| identity | semantic similarity | exact domain and issuer class | `spec/evaluator.test.mjs` | pass |
+| policy | rule drift | exact rule version and scope | `spec/evaluator.test.mjs` | pass |
+| threshold | “stricter” treated as equivalent | exact value and direction | `spec/evaluator.test.mjs` | pass |
+| provenance | ungrounded lesson transfers | high-confidence evidence | `spec/evaluator.test.mjs` | pass |
+| lifecycle | stale lesson transfers | reject non-active lesson | `spec/evaluator.test.mjs` | pass |
+| recall | empty/corrupt recall | diagnostic retry then block | live fixture | pending |
