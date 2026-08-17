@@ -1,1 +1,125 @@
-{"status":"pending_real_mainnet_run","receipts":[]}
+{
+  "status": "confirmed_mainnet_evidence",
+  "network": "mainnet",
+  "project": "Transfer Engine",
+  "confirmed_stage_count": 10,
+  "receipt_rule": "A checkpoint is counted only after MemWal rememberAndWait returns terminal completion with a non-empty blob_id. Job IDs are diagnostic metadata, not storage proof.",
+  "runs": [
+    {
+      "namespace": "walrus-session7/transfer-engine/triumphkrug/mainnet-evidence-v2",
+      "health": {
+        "status": "ok",
+        "version": "0.1.0"
+      },
+      "finished_at": "2026-08-17T22:58:16.078Z"
+    },
+    {
+      "namespace": "walrus-session7/transfer-engine/triumphkrug/mainnet-evidence-v3",
+      "health": {
+        "status": "ok",
+        "version": "0.1.0"
+      },
+      "finished_at": "2026-08-17T23:09:07.455Z"
+    },
+    {
+      "namespace": "walrus-session7/transfer-engine/triumphkrug/mainnet-evidence-v4",
+      "health": {
+        "status": "ok",
+        "version": "0.1.0"
+      },
+      "finished_at": "2026-08-17T23:16:59.233Z"
+    }
+  ],
+  "receipts": [
+    {
+      "stage_id": "TE-01",
+      "job_id": "d9c37be7-cd6c-44cf-9946-34c3d68a61cb",
+      "blob_id": "WD_mpJnBS4gz8iXd39Wgmu4DAY3M1o9HDe15jP8nalc",
+      "idempotency_key_sha256": "66a2134ea827acc4a20925adf34ce4acdcb609ffccfeaa0932f2573d5f5cca8c",
+      "started_at": "2026-08-17T22:57:00.091Z"
+    },
+    {
+      "stage_id": "TE-02",
+      "job_id": "25299276-7cd5-4e9c-9f70-3b59e09d68b6",
+      "blob_id": "ZgrbF0QdHaOiysGib0TeycJPTpqUUErmsGUPnwK8UNs",
+      "idempotency_key_sha256": "3c60001cfda9fb724858a705072b06c34afa3067e36de164a95bc8ae14736d94",
+      "started_at": "2026-08-17T22:57:44.708Z"
+    },
+    {
+      "stage_id": "TE-03",
+      "job_id": "d2013b29-83e6-4107-a349-36f910484d40",
+      "blob_id": "HItdmB2X0H-BTKKWdx6PbX0kQLWh7VIal5jc92hOAfI",
+      "idempotency_key_sha256": "832e43e9c75ca15ebc4460bceaa57891f6abb428528cfd83f083b7d30a7d6eb1",
+      "started_at": "2026-08-17T23:02:50.185Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 1
+      }
+    },
+    {
+      "stage_id": "TE-04",
+      "job_id": "7e82ab09-3e13-4dee-816a-71392d26c545",
+      "blob_id": "uOvP4skVJQL-3nWV0Q37hHCBI_Dne9AYF20jqCUV2Kk",
+      "idempotency_key_sha256": "aa91fd61a01b939a2eb07e6709aad7e6be8dafdc28b57bf5a94d80707d7f9701",
+      "started_at": "2026-08-17T23:03:37.107Z"
+    },
+    {
+      "stage_id": "TE-05",
+      "job_id": "19415d7d-dd0b-49b4-b661-08c83607d192",
+      "blob_id": "_q8ZndFi-pd2WslC-bfzV0mnNS27Ej_y-HT9L8CSabc",
+      "idempotency_key_sha256": "b22275a899af5619f041e91e48d91d12a8e1ba5ebf2e7e3970718adb4f1c208c",
+      "started_at": "2026-08-17T23:04:06.752Z"
+    },
+    {
+      "stage_id": "TE-06",
+      "job_id": "b2d2c8c4-2f5d-450e-bef4-738f12207b0a",
+      "blob_id": "ryxvQKNMhKHzy8-HQ3KKEgf0Rb1SwHESjljX-nPcnmw",
+      "idempotency_key_sha256": "8ef44955f7daa5bfb2db4e4d1f98dba65958c2c9bb7a87d129f9d79abe10f539",
+      "started_at": "2026-08-17T23:04:27.417Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 4
+      }
+    },
+    {
+      "stage_id": "TE-07",
+      "job_id": "29e11893-4853-45bb-816d-3181c98da3ac",
+      "blob_id": "ALXZDm-NdipxtoCFVAevNvxCFSglg2OSmOwzZsh95os",
+      "idempotency_key_sha256": "69a919066d39c3e4382388709d1cfcb4bb9d35a1d5d9e326dcfd3813554e90f2",
+      "started_at": "2026-08-17T23:05:16.941Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 5
+      }
+    },
+    {
+      "stage_id": "TE-08",
+      "job_id": "356b8695-fbdd-453a-a5d2-75079cfb8b3f",
+      "blob_id": "sc8I_MT8i9kCphTcXr37AWQooq1nNba_5A6W6aSgrvc",
+      "idempotency_key_sha256": "4fada8ab7275bde23b71ce6e0263905543b94ee49a44dd785fcec18a0bc107ce",
+      "started_at": "2026-08-17T23:05:40.562Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 6
+      }
+    },
+    {
+      "stage_id": "TE-09",
+      "job_id": "0047cd15-fe86-46ed-bb3b-a338e85c3278",
+      "blob_id": "UH4mmXn0KRnBzaLMzifgJSt4CddWFpK7P1OXTTdC_ac",
+      "idempotency_key_sha256": "630d32fb8a0cdfa0ab4bf93675aaa662215f539941f10ae801346fe3fea38103",
+      "started_at": "2026-08-17T23:16:04.166Z"
+    },
+    {
+      "stage_id": "TE-10",
+      "job_id": "e2a606eb-8e6e-4ff6-a41d-633886114965",
+      "blob_id": "hHztrPbQJU-rUnro-SYR6C8B9tvAb6N3EdSUXiZ3E_s",
+      "idempotency_key_sha256": "04f32df91642cc3513875d1d90192584a24bcf0b4af1d61b4339fc11658b1995",
+      "started_at": "2026-08-17T23:16:29.070Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 2
+      }
+    }
+  ]
+}

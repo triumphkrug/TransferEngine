@@ -1,1 +1,101 @@
-{"project":"Transfer Engine","evidence_status":"offline_plan_only","checkpoints":[{"stage_id":"TE-01","revision":"risk-baseline","goal":"Observe scoring anomaly.","cold_recall":false,"outcome":"stored"},{"stage_id":"TE-02","revision":"risk-baseline","goal":"Store risk lesson.","cold_recall":false,"outcome":"stored"},{"stage_id":"TE-03","revision":"same-risk","goal":"Cold recall same class.","cold_recall":true,"outcome":"applied"},{"stage_id":"TE-04","revision":"threshold-diagnosis","goal":"Diagnose factor/threshold.","cold_recall":false,"outcome":"stored"},{"stage_id":"TE-05","revision":"compatible-rule","goal":"Store transfer rule.","cold_recall":false,"outcome":"stored"},{"stage_id":"TE-06","revision":"new-issuer","goal":"Compatibility evaluate new case.","cold_recall":true,"outcome":"blocked"},{"stage_id":"TE-07","revision":"domain-mismatch","goal":"Record rejection reason.","cold_recall":true,"outcome":"rejected"},{"stage_id":"TE-08","revision":"compatible-case","goal":"Apply and run scorer.","cold_recall":true,"outcome":"applied"},{"stage_id":"TE-09","revision":"rule-v3","goal":"Supersede stale rule.","cold_recall":false,"outcome":"superseded"},{"stage_id":"TE-10","revision":"late-handoff","goal":"Cold transfer map and regression.","cold_recall":true,"outcome":"applied"}]}
+{
+  "project": "Transfer Engine",
+  "evidence_status": "mainnet_confirmed_10_of_10",
+  "checkpoints": [
+    {
+      "stage_id": "TE-01",
+      "revision": "risk-baseline",
+      "goal": "Observe scoring anomaly.",
+      "cold_recall": false,
+      "outcome": "stored",
+      "mainnet_status": "confirmed",
+      "blob_id": "WD_mpJnBS4gz8iXd39Wgmu4DAY3M1o9HDe15jP8nalc"
+    },
+    {
+      "stage_id": "TE-02",
+      "revision": "risk-baseline",
+      "goal": "Store risk lesson.",
+      "cold_recall": false,
+      "outcome": "stored",
+      "mainnet_status": "confirmed",
+      "blob_id": "ZgrbF0QdHaOiysGib0TeycJPTpqUUErmsGUPnwK8UNs"
+    },
+    {
+      "stage_id": "TE-03",
+      "revision": "same-risk",
+      "goal": "Cold recall same class.",
+      "cold_recall": true,
+      "outcome": "applied",
+      "mainnet_status": "confirmed",
+      "blob_id": "HItdmB2X0H-BTKKWdx6PbX0kQLWh7VIal5jc92hOAfI",
+      "cold_recall_result": "found"
+    },
+    {
+      "stage_id": "TE-04",
+      "revision": "threshold-diagnosis",
+      "goal": "Diagnose factor/threshold.",
+      "cold_recall": false,
+      "outcome": "stored",
+      "mainnet_status": "confirmed",
+      "blob_id": "uOvP4skVJQL-3nWV0Q37hHCBI_Dne9AYF20jqCUV2Kk"
+    },
+    {
+      "stage_id": "TE-05",
+      "revision": "compatible-rule",
+      "goal": "Store transfer rule.",
+      "cold_recall": false,
+      "outcome": "stored",
+      "mainnet_status": "confirmed",
+      "blob_id": "_q8ZndFi-pd2WslC-bfzV0mnNS27Ej_y-HT9L8CSabc"
+    },
+    {
+      "stage_id": "TE-06",
+      "revision": "new-issuer",
+      "goal": "Compatibility evaluate new case.",
+      "cold_recall": true,
+      "outcome": "blocked",
+      "mainnet_status": "confirmed",
+      "blob_id": "ryxvQKNMhKHzy8-HQ3KKEgf0Rb1SwHESjljX-nPcnmw",
+      "cold_recall_result": "found"
+    },
+    {
+      "stage_id": "TE-07",
+      "revision": "domain-mismatch",
+      "goal": "Record rejection reason.",
+      "cold_recall": true,
+      "outcome": "rejected",
+      "mainnet_status": "confirmed",
+      "blob_id": "ALXZDm-NdipxtoCFVAevNvxCFSglg2OSmOwzZsh95os",
+      "cold_recall_result": "found"
+    },
+    {
+      "stage_id": "TE-08",
+      "revision": "compatible-case",
+      "goal": "Apply and run scorer.",
+      "cold_recall": true,
+      "outcome": "applied",
+      "mainnet_status": "confirmed",
+      "blob_id": "sc8I_MT8i9kCphTcXr37AWQooq1nNba_5A6W6aSgrvc",
+      "cold_recall_result": "found"
+    },
+    {
+      "stage_id": "TE-09",
+      "revision": "rule-v3",
+      "goal": "Supersede stale rule.",
+      "cold_recall": false,
+      "outcome": "superseded",
+      "mainnet_status": "confirmed",
+      "blob_id": "UH4mmXn0KRnBzaLMzifgJSt4CddWFpK7P1OXTTdC_ac"
+    },
+    {
+      "stage_id": "TE-10",
+      "revision": "late-handoff",
+      "goal": "Cold transfer map and regression.",
+      "cold_recall": true,
+      "outcome": "applied",
+      "mainnet_status": "confirmed",
+      "blob_id": "hHztrPbQJU-rUnro-SYR6C8B9tvAb6N3EdSUXiZ3E_s",
+      "cold_recall_result": "found"
+    }
+  ]
+}
