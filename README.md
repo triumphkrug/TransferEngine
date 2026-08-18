@@ -21,7 +21,7 @@ The local scenario uses an RWA-style risk model. It accepts a prior lesson for t
 
 ## Evidence plan
 
-[`records/checkpoints.json`](./records/checkpoints.json) defines ten distinct checkpoints, including cold recall, explicit mismatch rejection, compatible application, supersession, and late regression. Live Mainnet evidence is pending until confirmed receipts are produced; see [`records/mainnet-receipts.json`](./records/mainnet-receipts.json).
+[`records/checkpoints.json`](./records/checkpoints.json) defines ten distinct checkpoints, including cold recall, explicit mismatch rejection, compatible application, supersession, and late regression. The committed [`records/mainnet-receipts.json`](./records/mainnet-receipts.json) records **10/10 terminal Mainnet receipts** and fresh-client cold recalls for TE-03, TE-06, TE-07, TE-08, and TE-10. Local compatibility proof and provider behavior remain separate.
 
 ## Structure
 
@@ -40,7 +40,7 @@ TransferEngine/
 
 ## Video
 
-Show a risk lesson entering the compatibility gate twice: one case shares its risk context and is applied after a local scorer check; the other has a domain mismatch and is rejected with a reason. Add Mainnet receipt evidence only after actual confirmation.
+Show a risk lesson entering the compatibility gate twice: one case shares its risk context and is applied after a local scorer check; the other has a domain mismatch and is rejected with a reason. The receipt board may show only the committed terminal receipts and fresh-client recalls; it must not present the local compatibility fixture as storage proof.
 
 ## Validation matrix
 
