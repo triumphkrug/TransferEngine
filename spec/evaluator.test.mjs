@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';import {evaluate} from '../intelligence/evaluator.mjs';
 const l={domain:'fund',issuer_class:'regulated',factor:'proof',threshold:.7,threshold_direction:'at-least',rule_version:'v1',scope:'risk-score',evidence:'test PASS',confidence:'high',status:'active',effective_at:'2026-08-16T00:00:00Z'};
-assert.equal(evaluate(l,{...l}).outcome,'applied');
+assert.equal(evaluate(l,{...l}).outcome,'blocked','compatibility alone never applies a lesson');
+assert.deepEqual(evaluate(l,{...l}).reasons,['local verification missing']);
+assert.equal(evaluate(l,{...l},{verifyLocal:()=>true}).outcome,'applied','only a committed caller-selected verifier can permit application');
+assert.equal(evaluate(l,{...l},{verifyLocal:()=>false}).outcome,'blocked','failed local verification blocks application');
 assert.equal(evaluate(l,{...l,domain:'other'}).outcome,'rejected');
 assert.equal(evaluate(l,{...l,threshold:.8}).outcome,'rejected','threshold change is never silently transferred');
 assert.equal(evaluate({...l,status:'superseded'},{...l}).outcome,'rejected','stale lesson denied');

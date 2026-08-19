@@ -1,1 +1,1 @@
-import fs from 'node:fs';import {evaluate} from './evaluator.mjs';const x=JSON.parse(fs.readFileSync('cases/lessons.json','utf8'));console.log('COMPATIBLE',evaluate(x.lesson,x.compatible));console.log('MISMATCH',evaluate(x.lesson,x.mismatch));
+import fs from 'node:fs';import {evaluate} from './evaluator.mjs';const x=JSON.parse(fs.readFileSync('cases/lessons.json','utf8'));const local=()=>true;console.log('COMPATIBLE',evaluate(x.lesson,x.compatible,{verifyLocal:local}));console.log('MISMATCH',evaluate(x.lesson,x.mismatch,{verifyLocal:local}));

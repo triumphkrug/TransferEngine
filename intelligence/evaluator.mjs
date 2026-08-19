@@ -6,7 +6,7 @@ function strings(value,out=[]){
   else if(value&&typeof value==='object')for(const item of Object.values(value))strings(item,out);
   return out;
 }
-export function evaluate(lesson,target){
+export function evaluate(lesson,target,{verifyLocal}={}){
   const reasons=[];
   // The prompt quarantines untrusted content in ANY field, so scan every string
   // value rather than a hand-picked list that a new field could slip past.
@@ -25,5 +25,11 @@ export function evaluate(lesson,target){
     reasons.push('threshold: incompatible or unknown');
   if(!lesson.evidence||lesson.confidence!=='high')reasons.push('evidence: source lesson is not grounded/high confidence');
   if(['superseded','expired','quarantined','rejected'].includes(lesson.status))reasons.push(`lifecycle: ${lesson.status}`);
-  return {outcome:reasons.length?'rejected':'applied',reasons}
+  if(reasons.length)return {outcome:'rejected',reasons};
+  if(typeof verifyLocal!=='function')return {outcome:'blocked',reasons:['local verification missing']};
+  let local;
+  try { local=verifyLocal({lesson,target}); }
+  catch { return {outcome:'blocked',reasons:['local verification failed']}; }
+  if(local!==true)return {outcome:'blocked',reasons:['local verification failed']};
+  return {outcome:'applied',reasons:['local verification passed']};
 }
