@@ -1,5 +1,8 @@
 # I Taught a Memory Agent When *Not* to Transfer a Lesson
 
+> **Publication status: owner-review draft.** First-person voice and factual
+> claims require adoption and approval by triumphkrug before publication.
+
 I selected Exam Mistake Memory because remembering a previous error is useful only when the next task is genuinely compatible with that lesson. That final condition is easy to overlook. A new case can look similar in language while differing in issuer type, safety scope, decision threshold, or policy revision. If an agent transfers the old lesson anyway, memory has turned a past correction into a confident new mistake.
 
 I evolved the prompt into **Transfer Engine**. A lesson is no longer just “what went wrong and what to do next.” It carries the attributes needed to test its applicability: domain, issuer class, factor, threshold and direction, rule version, scope, evidence, confidence, lifecycle, and effective time. On a new case, the agent evaluates those critical attributes conjunctively. Unknown is incompatible. A mismatch returns a named rejection rather than a softened similarity score.
