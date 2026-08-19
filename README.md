@@ -53,3 +53,11 @@ Show a risk lesson entering the compatibility gate twice: one case shares its ri
 | lifecycle | stale lesson transfers | reject non-active lesson | `spec/evaluator.test.mjs` | pass |
 | application | compatible fields treated as permission to apply | committed target-local verifier must pass | `spec/evaluator.test.mjs` | pass |
 | recall | empty/corrupt recall | diagnostic retry then block | live fixture | pending |
+
+## Judge path
+
+`make demo` is intentionally read-only and has four separate screens: **baseline**
+(`blocked: local verification missing`) → **evolved** (`applied` only after the
+target-local verifier passes) → **mismatch** (`rejected` with named fields) →
+**receipt-board boundary**. The fixture is synthetic. The final line reports
+only the committed receipt-manifest structure; it is not a fresh Mainnet run.
