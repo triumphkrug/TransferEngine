@@ -19,6 +19,18 @@ make demo
 
 The local scenario uses an RWA-style risk model. It accepts a prior lesson for the same factor/domain/rule revision, and rejects a superficially similar lesson when issuer domain differs. It is a deterministic policy demonstration, not a claim about a live asset or on-chain score.
 
+### Owner-scoped historical replay
+
+The replay package in [`replay/historical-rwa-sentinel.json`](./replay/historical-rwa-sentinel.json) applies the evolved policy to Triumph Krug's [`RWA-Sentinel`](https://github.com/triumphkrug/RWA-Sentinel) history. It selects the direct one-commit interval from `cf124f605084f3c065ee020cd6398b363a63063f` to `1bab9bc92eda998b4f43b82aa00312db21d78bc8`: the prior commit expanded the MCP/anomaly/document/oracle surface; the next owner-authored security repair added input validation, bounded histories and arguments, zero-denominator handling, and structured hashing.
+
+Reproduce against a full clone:
+
+```bash
+make historical-replay KRUG_HISTORICAL_REPO=/path/to/RWA-Sentinel
+```
+
+The checker locks source commits, direct-parent interval, owner identity, changed paths, concrete repair markers, and the SHA-256 of this prompt. It proves only that the policy was applied to a reproducible owner-scoped historical input. It is not a provider-model run, a live financial decision, or a new Mainnet write.
+
 ## Evidence plan
 
 [`records/checkpoints.json`](./records/checkpoints.json) defines ten distinct checkpoints, including cold recall, explicit mismatch rejection, compatible application, supersession, and late regression. The committed [`records/mainnet-receipts.json`](./records/mainnet-receipts.json) records **10/10 terminal Mainnet receipts** and fresh-client cold recalls for TE-03, TE-06, TE-07, TE-08, and TE-10. Local compatibility proof and provider behavior remain separate.
@@ -59,5 +71,5 @@ Show a risk lesson entering the compatibility gate twice: one case shares its ri
 `make demo` is intentionally read-only and has four separate screens: **baseline**
 (`blocked: local verification missing`) → **evolved** (`applied` only after the
 target-local verifier passes) → **mismatch** (`rejected` with named fields) →
-**receipt-board boundary**. The fixture is synthetic. The final line reports
+**receipt-board boundary**. The RWA compatibility fixture is synthetic; the historical replay is separately reproducible against `RWA-Sentinel`. The final line reports
 only the committed receipt-manifest structure; it is not a fresh Mainnet run.

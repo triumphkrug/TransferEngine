@@ -1,0 +1,61 @@
+{
+  "replay_id": "TE-HIST-RWAS-01",
+  "classification": "owner-scoped historical replay",
+  "owner": {
+    "handle": "triumphkrug",
+    "accepted_identities": [
+      "triumphkrug <triumphkrug@gmail.com>",
+      "triumphkrug <triumphkrug@users.noreply.github.com>",
+      "triumphkrug <quentin.krug@gmail.com>"
+    ]
+  },
+  "source_repository": "triumphkrug/RWA-Sentinel",
+  "selection_rule": "Select the direct parent and the immediately following owner-authored security repair that hardens validation of the RWA Sentinel's newly expanded MCP/anomaly/document/oracle surfaces.",
+  "base_commit": "cf124f605084f3c065ee020cd6398b363a63063f",
+  "repair_commit": "1bab9bc92eda998b4f43b82aa00312db21d78bc8",
+  "interval_commits": 1,
+  "historical_input": {
+    "observed_at_repair": "2026-07-02T01:06:36Z",
+    "base_change": "The direct parent expands the MCP interface and dashboard surfaces for anomaly detection, document verification, and oracle management.",
+    "repair_change": "The next owner-authored commit adds finite-number/date/identifier checks, bounds retained histories and request arguments, handles zero denominators, and replaces delimiter-concatenated evidence hashing with structured JSON.",
+    "changed_paths": [
+      "agent/src/publisher/oracleManager.ts",
+      "agent/src/validator/anomalyDetector.ts",
+      "agent/src/validator/documentVerifier.ts",
+      "sdk/mcp.ts"
+    ]
+  },
+  "policy_application": {
+    "source_prompt": "PROMPT.md",
+    "source_prompt_sha256": "9928aa37d7a828715c1e1ee5e863a90ac5696a320b1bbab283df4eb1d07cd0d8",
+    "lesson": {
+      "record_id": "TE-HIST-RWAS-01",
+      "domain": "rwa-sentinel",
+      "issuer_class": "oracle-service",
+      "factor": "input-validation",
+      "threshold": 1,
+      "threshold_direction": "required",
+      "rule_version": "rwa-sentinel-security-repair-v1",
+      "scope": "mcp-and-validator-boundaries",
+      "status": "active",
+      "confidence": "high",
+      "effective_at": "2026-07-02T00:55:25Z",
+      "evidence": "direct owner-authored security repair with four verified changed boundary files"
+    },
+    "target": {
+      "domain": "rwa-sentinel",
+      "issuer_class": "oracle-service",
+      "factor": "input-validation",
+      "threshold": 1,
+      "threshold_direction": "required",
+      "rule_version": "rwa-sentinel-security-repair-v1",
+      "scope": "mcp-and-validator-boundaries",
+      "status": "active",
+      "effective_at": "2026-07-02T00:55:25Z"
+    },
+    "expected_outcome": "applied",
+    "local_verifier": "scripts/check-historical-replay.mjs"
+  },
+  "assertion": "The evolved policy accepts this lesson only after the committed local checker establishes the exact direct-parent interval, accepted owner identity, expected files, and concrete security-hardening markers. It does not permit a transfer to a different RWA asset, rule version, scope, or unverified target.",
+  "evidence_boundary": "This is a deterministic replay of a policy against reproducible owner-scoped Git history. It proves neither a fresh provider-model run nor a new Mainnet write."
+}
