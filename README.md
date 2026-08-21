@@ -6,6 +6,14 @@ An evolution of [Exam Mistake Memory](https://github.com/EAZITECH1/exam-mistake-
 
 ![Compatibility pipeline](./visuals/transfer-pipeline.svg)
 
+
+## Interactive verification lab
+
+**Run in browser:** [interactive verification lab](https://transfer-engine-45x3e9xvk-krug.vercel.app)  
+**Reproduce locally:** `make test && make demo`
+
+The browser lab is a read-only, deterministic view of the project’s published policy scenarios. It does not create a Mainnet write; committed receipt and fresh-client proof remain separate evidence.
+
 ## Problem
 
 Semantic similarity is not compatibility. A prior scoring anomaly may look relevant to a new asset while involving a different issuer type, risk factor, threshold, or policy revision. Blindly transferring it creates a confident wrong answer; discarding all history loses useful learning.
