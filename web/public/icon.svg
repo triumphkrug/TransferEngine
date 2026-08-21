@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0e2638"/><path d="M11 36c0-16 11-25 21-25s21 9 21 25c0 9-6 16-14 16H25c-8 0-14-7-14-16Z" fill="#ec7052"/><circle cx="26" cy="31" r="3" fill="#eaf0e7"/><circle cx="39" cy="31" r="3" fill="#eaf0e7"/><path d="M25 40q7 5 14 0" fill="none" stroke="#eaf0e7" stroke-width="3" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Transfer Engine">
+  <rect width="48" height="48" rx="12" fill="#061420"/>
+  <path d="M9 24h20" stroke="#eef5f4" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M27 15.5 35.5 24 27 32.5" fill="none" stroke="#4fd8cf" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 9v30" stroke="#4fd8cf" stroke-width="3.2" stroke-linecap="round" opacity="0.55"/>
+  <circle cx="12" cy="24" r="3.4" fill="#4fd8cf"/>
+</svg>

@@ -1,8 +1,10 @@
 {
-  "name": "krug-web-lab",
+  "name": "transfer-engine-web",
   "private": true,
   "scripts": {
+    "dev": "next dev",
     "build": "next build",
+    "start": "next start",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

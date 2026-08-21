@@ -12,7 +12,17 @@ An evolution of [Exam Mistake Memory](https://github.com/EAZITECH1/exam-mistake-
 **Run in browser:** [interactive verification lab](https://transfer-engine-krug.vercel.app)  
 **Reproduce locally:** `make test && make demo`
 
-The browser lab is a read-only, deterministic view of the project’s published policy scenarios. It does not create a Mainnet write; committed receipt and fresh-client proof remain separate evidence.
+The browser lab renders one transfer route: a recalled lesson enters at the left, each compared field is a checkpoint, and the route only opens when every checkpoint matches and a reviewed target-local verifier passes. The page calls the canonical resolver in [`intelligence/evaluator.mjs`](./intelligence/evaluator.mjs) through [`web/app/api/evaluate/route.js`](./web/app/api/evaluate/route.js) — there are no simulated verdicts.
+
+The operator note in the lab is real input: it is attached to the target record as `analyst_note` and is scanned by the same recursive trust-boundary scan the CLI uses, so instruction-shaped or secret-like text sends the candidate down the quarantine route. It can never set a compared field value, so benign text leaves a committed fixture result unchanged. Each run also prints the verbatim canonical outcome and reasons.
+
+The lab is read-only and deterministic. It does not create a Mainnet write; committed receipt and fresh-client proof remain separate evidence in `records/`.
+
+Run the lab locally:
+
+```bash
+cd web && npm install && npm run build && npm start
+```
 
 ## Problem
 
@@ -50,7 +60,8 @@ TransferEngine/
 ├── cases/            versioned typed risk cases
 ├── records/          stage plan and safe receipts
 ├── visuals/          rendered pipeline graphic
-├── spec/             deterministic regression test
+├── spec/             deterministic regression tests (evaluator + lab layer)
+├── web/              Next.js verification lab (canonical resolver via API route)
 ├── PROMPT.md
 ├── ARTICLE.md
 ├── ISSUE.md
