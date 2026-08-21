@@ -34,7 +34,7 @@ The replay package in [`replay/historical-owner-replay.json`](./replay/historica
 Reproduce against a full clone:
 
 ```bash
-make historical-replay KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository
+make historical-replay KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository
 ```
 
 
