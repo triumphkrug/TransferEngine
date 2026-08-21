@@ -14,13 +14,13 @@ A remembered lesson travels only through a target route where every required com
 - Do not show a blob ID as fresh evidence without a recorded fresh terminal run and independent read.
 
 | Time | Screen / narration |
-|---|---|
+
+| 0:00–0:10 | State: “Similarity is not permission.” Show exact baseline-to-evolved delta. |
 | 0:10–0:24 | Open the [interactive verification lab](https://transfer-engine-krug.vercel.app); open Navigator Wally, enter the target context, select a route, and keep its resolver trace visible. |
-| 0:00–0:12 | State: “Similarity is not permission.” Show exact baseline-to-evolved delta. |
-| 0:12–0:28 | Run `make demo`; show how the target-local verifier establishes the compatible route. |
-| 0:28–0:44 | Show the same compatible case becomes applied only after the committed local verifier passes. |
-| 0:44–1:00 | Show the alternate issuer route and the named compatibility handling trace. |
-| 1:00–1:16 | Run the owner-scoped historical replay; show exact direct interval and security-hardening markers. |
+| 0:24–0:38 | Run `make demo`; show how the target-local verifier establishes the compatible route. |
+| 0:38–0:50 | Show the same compatible case becomes applied only after the committed local verifier passes. |
+| 0:50–1:03 | Show the alternate issuer route and the named compatibility handling trace. |
+| 1:03–1:16 | Run the owner-scoped historical replay only with its full authorized clone; otherwise omit this optional segment. |
 
 ## On-screen claim
 
