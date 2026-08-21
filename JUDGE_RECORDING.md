@@ -15,6 +15,7 @@ A semantically similar remembered lesson can be applied to the wrong issuer, thr
 
 | Time | Screen / narration |
 |---|---|
+| 0:10–0:24 | Open the [interactive verification lab](https://transfer-engine-krug.vercel.app); select the unsafe or adversarial scenario and keep its resolver trace visible. |
 | 0:00–0:12 | State: “Similarity is not permission.” Show exact baseline-to-evolved delta. |
 | 0:12–0:28 | Run `make demo`; show compatibility alone is blocked when the target-local verifier is missing. |
 | 0:28–0:44 | Show the same compatible case becomes applied only after the committed local verifier passes. |
