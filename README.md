@@ -87,3 +87,7 @@ This layer is **complete as coverage, not as a universal pass claim**. Gemini pr
 target-local verifier passes) → **mismatch** (`rejected` with named fields) →
 **receipt-board boundary**. The RWA compatibility fixture is synthetic; the historical replay is separately reproducible against `RWA-Sentinel`. The final line reports
 only the committed receipt-manifest structure; it is not a fresh Mainnet run.
+
+## Current SDK proof
+
+A current official-SDK write → terminal non-empty `blob_id` → destroy → new-client exact recall is recorded in [`records/live-sdk-proof-2026-08-21.json`](./records/live-sdk-proof-2026-08-21.json). It validates the SDK path separately from the ten-checkpoint manifest.
