@@ -34,12 +34,13 @@ The replay package in [`replay/historical-owner-replay.json`](./replay/historica
 Reproduce against a full clone:
 
 ```bash
-make historical-replay KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository
+make historical-replay KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository
 ```
 
 
 ## Evidence plan
 
+The local evaluator proves only typed compatibility policy. [`records/mainnet-receipts.json`](./records/mainnet-receipts.json) separately records the committed 10 terminal receipt rows and five fresh-client recall markers; it is not a new write from `make demo`. The historical replay becomes evidence only when run against the authorized owner-scoped clone above.
 
 ## Structure
 
