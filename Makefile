@@ -1,4 +1,7 @@
-.PHONY: evidence-check test demo historical-replay
+.PHONY: provider-matrix  evidence-check test demo historical-replay
+provider-matrix:
+	node scripts/check-provider-matrix.mjs records/provider-matrix-2026-08-21.json PROMPT.md
+
 test: evidence-check
 	node records/validate.mjs
 	node spec/evaluator.test.mjs
