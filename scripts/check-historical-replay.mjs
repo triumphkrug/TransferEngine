@@ -7,11 +7,11 @@ import {evaluate} from '../intelligence/evaluator.mjs';
 
 const repo=process.env.KRUG_HISTORICAL_REPO;
 if(!repo){
-  console.log('historical replay: SKIP (set KRUG_HISTORICAL_REPO to a full RWA-Sentinel clone)');
+  console.log('historical replay: SKIP (set KRUG_HISTORICAL_REPO to a full owner-scoped clone)');
   process.exit(0);
 }
 const root=resolve(repo);
-const manifest=JSON.parse(readFileSync(new URL('../replay/historical-rwa-sentinel.json',import.meta.url)));
+const manifest=JSON.parse(readFileSync(new URL('../replay/historical-owner-replay.json',import.meta.url)));
 const git=(...args)=>execFileSync('git',['-C',root,...args],{encoding:'utf8'}).trim();
 const base=manifest.base_commit, repair=manifest.repair_commit;
 

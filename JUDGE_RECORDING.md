@@ -20,7 +20,7 @@ A semantically similar remembered lesson can be applied to the wrong issuer, thr
 | 0:12–0:28 | Run `make demo`; show compatibility alone is blocked when the target-local verifier is missing. |
 | 0:28–0:44 | Show the same compatible case becomes applied only after the committed local verifier passes. |
 | 0:44–1:00 | Show the superficially similar unregulated issuer case and named mismatch rejection. |
-| 1:00–1:16 | Run owner-scoped RWA-Sentinel historical replay; show exact direct interval and security-hardening markers. |
+| 1:00–1:16 | Run the owner-scoped historical replay; show exact direct interval and security-hardening markers. |
 
 ## On-screen claim
 

@@ -5,7 +5,7 @@
 ```bash
 make test
 make demo
-make historical-replay KRUG_HISTORICAL_REPO=/path/to/RWA-Sentinel
+make historical-replay KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository
 ```
 
 1. Show the source lesson: regulated-fund issuer proof, declared threshold, scope, rule version, evidence, and active lifecycle.
@@ -16,7 +16,7 @@ make historical-replay KRUG_HISTORICAL_REPO=/path/to/RWA-Sentinel
 
 ## Historical replay sequence
 
-6. Use the full owner-scoped `triumphkrug/RWA-Sentinel` clone and run the `make historical-replay` command above.
+6. Use the full owner-scoped historical clone and run the `make historical-replay` command above.
 7. The checker prints the selected direct interval: the MCP/anomaly/document/oracle expansion at `cf124f6…` and its immediate owner-authored security repair at `1bab9bc…`.
 8. Show the machine-checked policy result `applied` only after exact commit, author, changed-file, hardening-marker, and prompt-hash checks pass. This is a replay of a historical security repair; it does not score a live asset.
 

@@ -25,16 +25,16 @@ make test
 make demo
 ```
 
-The local scenario uses an RWA-style risk model. It accepts a prior lesson for the same factor/domain/rule revision, and rejects a superficially similar lesson when issuer domain differs. It is a deterministic policy demonstration, not a claim about a live asset or on-chain score.
+The local scenario uses a typed risk model. It accepts a prior lesson for the same factor/domain/rule revision, and rejects a superficially similar lesson when issuer domain differs. It is a deterministic policy demonstration, not a claim about a live asset or on-chain score.
 
 ### Owner-scoped historical replay
 
-The replay package in [`replay/historical-rwa-sentinel.json`](./replay/historical-rwa-sentinel.json) applies the evolved policy to Triumph Krug's [`RWA-Sentinel`](https://github.com/triumphkrug/RWA-Sentinel) history. It selects the direct one-commit interval from `cf124f605084f3c065ee020cd6398b363a63063f` to `1bab9bc92eda998b4f43b82aa00312db21d78bc8`: the prior commit expanded the MCP/anomaly/document/oracle surface; the next owner-authored security repair added input validation, bounded histories and arguments, zero-denominator handling, and structured hashing.
+The replay package in [`replay/historical-owner-replay.json`](./replay/historical-owner-replay.json) applies the evolved policy to a verified owner-scoped historical interval. It selects the direct one-commit interval from `cf124f605084f3c065ee020cd6398b363a63063f` to `1bab9bc92eda998b4f43b82aa00312db21d78bc8`: the prior commit expanded the MCP/anomaly/document/oracle surface; the next owner-authored security repair added input validation, bounded histories and arguments, zero-denominator handling, and structured hashing.
 
 Reproduce against a full clone:
 
 ```bash
-make historical-replay KRUG_HISTORICAL_REPO=/path/to/RWA-Sentinel
+make historical-replay KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository
 ```
 
 
@@ -46,7 +46,7 @@ make historical-replay KRUG_HISTORICAL_REPO=/path/to/RWA-Sentinel
 ```text
 TransferEngine/
 ├── intelligence/     compatibility evaluator and transfer map
-├── cases/            versioned RWA-style risk cases
+├── cases/            versioned typed risk cases
 ├── records/          stage plan and safe receipts
 ├── visuals/          rendered pipeline graphic
 ├── spec/             deterministic regression test
@@ -85,7 +85,7 @@ Show a risk lesson entering the compatibility gate twice: one case shares its ri
 `make demo` is intentionally read-only and has four separate screens: **baseline**
 (`blocked: local verification missing`) → **evolved** (`applied` only after the
 target-local verifier passes) → **mismatch** (`rejected` with named fields) →
-**receipt-board boundary**. The RWA compatibility fixture is synthetic; the historical replay is separately reproducible against `RWA-Sentinel`. The final line reports
+**receipt-board boundary**. The historical compatibility fixture is synthetic; the historical replay is separately reproducible against a verified owner-scoped repository. The final line reports
 only the committed receipt-manifest structure; it is not a fresh Mainnet run.
 
 ## Current SDK proof
