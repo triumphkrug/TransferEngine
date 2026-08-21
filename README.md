@@ -29,11 +29,9 @@ Reproduce against a full clone:
 make historical-replay KRUG_HISTORICAL_REPO=/path/to/RWA-Sentinel
 ```
 
-The checker locks source commits, direct-parent interval, owner identity, changed paths, concrete repair markers, and the SHA-256 of this prompt. It proves only that the policy was applied to a reproducible owner-scoped historical input. It is not a provider-model run, a live financial decision, or a new Mainnet write.
 
 ## Evidence plan
 
-[`records/checkpoints.json`](./records/checkpoints.json) defines ten distinct checkpoints, including cold recall, explicit mismatch rejection, compatible application, supersession, and late regression. The committed [`records/mainnet-receipts.json`](./records/mainnet-receipts.json) records **10/10 terminal Mainnet receipts** and fresh-client cold recalls for TE-03, TE-06, TE-07, TE-08, and TE-10. Local compatibility proof and provider behavior remain separate.
 
 ## Structure
 

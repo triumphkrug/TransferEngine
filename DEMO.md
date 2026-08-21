@@ -21,5 +21,3 @@ make historical-replay KRUG_HISTORICAL_REPO=/path/to/RWA-Sentinel
 8. Show the machine-checked policy result `applied` only after exact commit, author, changed-file, hardening-marker, and prompt-hash checks pass. This is a replay of a historical security repair; it does not score a live asset.
 
 ## Claim boundary
-
-The compatibility fixture is synthetic. The separate historical replay uses owner-scoped RWA-Sentinel commits and proves a reproducible policy application to a real historical input. Neither component claims an on-chain score, a production financial decision, a provider-model run, or a completed new Mainnet write. Add live receipt/recovery footage only when a stage has a terminal `blob_id` and cold recall.
