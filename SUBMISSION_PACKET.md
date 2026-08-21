@@ -13,7 +13,7 @@
 **Deterministic/Mainnet evidence manifest:** [`records/mainnet-receipts.json`](./records/mainnet-receipts.json)  
 **Article draft:** [`ARTICLE.md`](./ARTICLE.md)  
 **Source feedback draft:** [`ISSUE.md`](./ISSUE.md)  
-**Video runbook:** [`DEMO.md`](./DEMO.md)
+**Video runbook:** [`JUDGE_RECORDING.md`](./JUDGE_RECORDING.md)
 
 ## Evidence boundary
 
