@@ -11,7 +11,6 @@ A semantically similar remembered lesson can be applied to the wrong issuer, thr
 - Duration target: **90 seconds**.
 - Use the repository’s real read-only commands only. Start with `make test` off-screen or briefly show its PASS summary.
 - Keep the baseline failure, evolved assertion, and evidence boundary in the same uninterrupted run.
-- Do not show raw provider output. `make provider-matrix` is optional reviewer evidence: it documents two-family coverage and deviations, not a model-security pass.
 - Do not show a blob ID as fresh evidence without a recorded fresh terminal run and independent read.
 
 | Time | Screen / narration |
@@ -21,7 +20,6 @@ A semantically similar remembered lesson can be applied to the wrong issuer, thr
 | 0:28–0:44 | Show the same compatible case becomes applied only after the committed local verifier passes. |
 | 0:44–1:00 | Show the superficially similar unregulated issuer case and named mismatch rejection. |
 | 1:00–1:16 | Run owner-scoped RWA-Sentinel historical replay; show exact direct interval and security-hardening markers. |
-| 1:16–1:30 | Show receipt board boundary, not a new provider or financial decision. |
 
 ## On-screen claim
 
