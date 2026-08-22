@@ -101,14 +101,14 @@ export default function Page() {
           </div>
           <figure className="hero-mascot">
             <Image
-              src="/mascot-primary.png"
-              alt="The Walrus mascot in a knit beanie and visor, standing as the checkpoint marshal for the transfer route."
+              src="/transfer-engine-navigator.png"
+              alt="A navigator studies a compass over a map with one verified route and one blocked route."
               width={544}
               height={900}
               priority
               sizes="(max-width: 860px) 55vw, 320px"
             />
-            <figcaption>Official Walrus mascot · checkpoint marshal</figcaption>
+            <figcaption>Compatibility navigator · route adjudication</figcaption>
           </figure>
         </section>
 
