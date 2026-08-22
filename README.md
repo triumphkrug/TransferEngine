@@ -12,6 +12,8 @@ An evolution of [Exam Mistake Memory](https://github.com/EAZITECH1/exam-mistake-
 **Run in browser:** [interactive verification lab](https://transfer-engine-krug.vercel.app)  
 **Reproduce locally:** `make test && make demo`
 
+**Receipt inventory:** [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
+
 The browser lab renders one transfer route: a recalled lesson enters at the left, each compared field is a checkpoint, and the route only opens when every checkpoint matches and a reviewed target-local verifier passes. The page calls the canonical resolver in [`intelligence/evaluator.mjs`](./intelligence/evaluator.mjs) through [`web/app/api/evaluate/route.js`](./web/app/api/evaluate/route.js) — there are no simulated verdicts.
 
 The operator note in the lab is real input: it is attached to the target record as `analyst_note` and is scanned by the same recursive trust-boundary scan the CLI uses, so instruction-shaped or secret-like text sends the candidate down the quarantine route. It can never set a compared field value, so benign text leaves a committed fixture result unchanged. Each run also prints the verbatim canonical outcome and reasons.
