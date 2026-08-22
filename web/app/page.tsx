@@ -96,31 +96,51 @@ export default function Page() {
 
       <main>
         <section className="hero" aria-labelledby="title">
-          <div className="hero-copy">
-            <p className="kicker">Walrus Sessions 7 · read-only agent lab</p>
-            <h1 id="title">A lesson only travels as far as its checkpoints allow.</h1>
-            <p className="lede">
-              Transfer Engine recalls a prior typed lesson, then walks it along a transfer route.
-              Every compared field is a checkpoint. Similarity proposes the route; only matching
-              typed values and a target-local verifier open it.
-            </p>
-            <p className="boundary">
-              No wallet, no provider key, no storage write. This page calls the committed resolver in{" "}
-              <code>intelligence/evaluator.mjs</code> over committed fixtures. Mainnet persistence is a
-              separate, committed evidence layer — it is not proven by this browser lab.
-            </p>
+          <p className="kicker">Walrus Sessions 7 · read-only agent lab</p>
+          <h1 id="title">
+            <span>A lesson travels</span>
+            <span className="accent">only as far</span>
+            <span>as its checkpoints allow</span>
+          </h1>
+
+          <div className="ticker" aria-hidden="true">
+            <div className="ticker-run">
+              <span>domain</span><i>·</i><span>issuer class</span><i>·</i><span>factor</span><i>·</i>
+              <span>threshold value</span><i>·</i><span>threshold direction</span><i>·</i>
+              <span>rule version</span><i>·</i><span>scope</span><i>·</i><span>target-local verifier</span><i>·</i>
+              <span>domain</span><i>·</i><span>issuer class</span><i>·</i><span>factor</span><i>·</i>
+              <span>threshold value</span><i>·</i><span>threshold direction</span><i>·</i>
+              <span>rule version</span><i>·</i><span>scope</span><i>·</i><span>target-local verifier</span><i>·</i>
+            </div>
           </div>
-          <figure className="hero-mascot">
-            <Image
-              src="/transfer-engine-navigator.png"
-              alt="A navigator studies a compass over a map with one verified route and one blocked route."
-              width={544}
-              height={900}
-              priority
-              sizes="(max-width: 860px) 55vw, 320px"
-            />
-            <figcaption>Compatibility navigator · route adjudication</figcaption>
-          </figure>
+
+          <div className="hero-lower">
+            <figure className="hero-node">
+              <Image
+                src="/transfer-engine-navigator.png"
+                alt="A navigator studies a compass over a map with one verified route and one blocked route."
+                width={544}
+                height={900}
+                priority
+                sizes="(max-width: 860px) 60vw, 260px"
+              />
+              <figcaption>Route adjudication</figcaption>
+            </figure>
+            <div className="hero-copy">
+              <p className="lede">
+                Transfer Engine recalls a prior typed lesson, then walks it along a transfer route.
+                Every compared field is a checkpoint. Similarity proposes the route; only matching
+                typed values and a target-local verifier open it.
+              </p>
+              <p className="boundary">
+                No wallet, no provider key, no storage write. This page calls the committed resolver in{" "}
+                <code>intelligence/evaluator.mjs</code> over committed fixtures. Mainnet persistence is a
+                separate, committed evidence layer — it is not proven by this browser lab.
+              </p>
+              <a className="hero-cta" href="#lab">Run a transfer route</a>
+            </div>
+            <p className="hero-figure" aria-hidden="true">08</p>
+          </div>
         </section>
 
         <section id="lab" className="lab" aria-labelledby="lab-title">
