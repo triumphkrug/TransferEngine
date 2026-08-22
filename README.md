@@ -14,6 +14,9 @@ An evolution of [Exam Mistake Memory](https://github.com/EAZITECH1/exam-mistake-
 
 **Receipt inventory:** [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
 
+**Prompt-to-proof map:** [`docs/PROMPT_TO_TEST.md`](./docs/PROMPT_TO_TEST.md)  
+**Replay receipt:** [`docs/REPLAY_RECEIPT.md`](./docs/REPLAY_RECEIPT.md)  
+
 The browser lab renders one transfer route: a recalled lesson enters at the left, each compared field is a checkpoint, and the route only opens when every checkpoint matches and a reviewed target-local verifier passes. The page calls the canonical resolver in [`intelligence/evaluator.mjs`](./intelligence/evaluator.mjs) through [`web/app/api/evaluate/route.js`](./web/app/api/evaluate/route.js) — there are no simulated verdicts.
 
 The operator note in the lab is real input: it is attached to the target record as `analyst_note` and is scanned by the same recursive trust-boundary scan the CLI uses, so instruction-shaped or secret-like text sends the candidate down the quarantine route. It can never set a compared field value, so benign text leaves a committed fixture result unchanged. Each run also prints the verbatim canonical outcome and reasons.
