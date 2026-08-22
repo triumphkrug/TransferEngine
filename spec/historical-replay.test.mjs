@@ -1,10 +1,14 @@
 import {spawnSync} from 'node:child_process';
 import assert from 'node:assert/strict';
-if(!process.env.KRUG_HISTORICAL_REPO){
-  console.log('historical replay test: UNVERIFIED (set KRUG_HISTORICAL_REPO to a full owner-scoped clone)');
-  process.exit(0);
-}
-const result=spawnSync(process.execPath,['scripts/check-historical-replay.mjs'],{encoding:'utf8',env:process.env});
+import {mkdtempSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+const scratch=mkdtempSync(join(tmpdir(),'te-history-'));
+const historical=join(scratch,'repo');
+const clone=spawnSync('git',['clone','--quiet','--branch','session7-replay','replay/transfer-history.bundle',historical],{encoding:'utf8'});
+assert.equal(clone.status,0,clone.stderr);
+const result=spawnSync(process.execPath,['scripts/check-historical-replay.mjs'],{encoding:'utf8',env:{...process.env,KRUG_HISTORICAL_REPO:historical}});
 assert.equal(result.status,0,result.stderr);
 assert.match(result.stdout,/TE-HIST-RWAS-01/);
 console.log('historical replay test: PASS');
+rmSync(scratch,{recursive:true,force:true});
