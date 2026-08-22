@@ -1,5 +1,5 @@
 .PHONY: evidence-check test demo historical-replay
-test: evidence-check
+test: prompt-contract  evidence-check
 	node records/validate.mjs
 	node spec/evaluator.test.mjs
 	node spec/lab.test.mjs
@@ -13,3 +13,6 @@ historical-replay:
 
 evidence-check:
 	node scripts/check-evidence.mjs records/mainnet-receipts.json
+
+prompt-contract:
+	node spec/prompt-contract.test.mjs
