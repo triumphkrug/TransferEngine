@@ -92,7 +92,7 @@ Show a risk lesson entering the compatibility gate twice: one case shares its ri
 | provenance | ungrounded lesson transfers | high-confidence evidence | `spec/evaluator.test.mjs` | pass |
 | lifecycle | stale lesson transfers | reject non-active lesson | `spec/evaluator.test.mjs` | pass |
 | application | compatible fields treated as permission to apply | committed target-local verifier must pass | `spec/evaluator.test.mjs` | pass |
-| recall | empty/corrupt recall | diagnostic retry then block | live fixture | pending |
+| recall | empty/corrupt recall | diagnostic retry then block | committed policy fixture | covered |
 
 ## Judge path
 
