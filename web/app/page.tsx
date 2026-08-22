@@ -37,10 +37,14 @@ export default function Page() {
   const [data, setData] = useState<LabResult | null>(null);
   const [busy, setBusy] = useState(false);
   const [problem, setProblem] = useState("");
+  const [runSeq, setRunSeq] = useState(0);
+  const [ranAt, setRanAt] = useState<string | null>(null);
+  const [flash, setFlash] = useState(false);
   const noteRef = useRef(note);
   noteRef.current = note;
+  const outcomeRef = useRef<HTMLDivElement>(null);
 
-  const run = useCallback(async (scenario: string) => {
+  const run = useCallback(async (scenario: string, manual = false) => {
     setBusy(true);
     setProblem("");
     setActive(scenario);
@@ -52,6 +56,13 @@ export default function Page() {
       });
       if (!response.ok) throw new Error(String(response.status));
       setData((await response.json()) as LabResult);
+      setRunSeq((current) => current + 1);
+      setRanAt(new Date().toLocaleTimeString());
+      setFlash(true);
+      window.setTimeout(() => setFlash(false), 900);
+      if (manual) {
+        outcomeRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     } catch {
       setProblem("The resolver did not answer this request. Re-run the route, or reproduce the same result locally with make test && make demo.");
     } finally {
@@ -155,14 +166,14 @@ export default function Page() {
                   type="button"
                   className={scenario.id === active ? "chip chip-on" : "chip"}
                   aria-pressed={scenario.id === active}
-                  onClick={() => void run(scenario.id)}
+                  onClick={() => void run(scenario.id, true)}
                   disabled={busy}
                 >
                   <em>{scenario.tag}</em>
                   <span>{scenario.name}</span>
                 </button>
               ))}
-              <button type="button" className="rerun" onClick={() => void run(active)} disabled={busy}>
+              <button type="button" className="rerun" onClick={() => void run(active, true)} disabled={busy}>
                 {busy ? "Routing…" : "Run the route"}
               </button>
             </div>
@@ -200,9 +211,15 @@ export default function Page() {
             </ol>
           </div>
 
-          <div className="outcome" aria-live="polite">
+          <div ref={outcomeRef} className={flash ? "outcome flash" : "outcome"} aria-live="polite">
             <div className={open ? "route-card route-open" : "route-card"}>
-              <p className="kicker">Route taken</p>
+              <p className="kicker">
+                {busy
+                  ? "Routing in the canonical resolver…"
+                  : ranAt
+                    ? `Route taken · run ${runSeq} · ${ranAt}`
+                    : "Route taken"}
+              </p>
               <h3>{data ? data.route : "Reading the committed fixture"}</h3>
               <p>{data ? data.detail : "The canonical resolver is being called."}</p>
               {data?.noteQuarantined && (
@@ -211,6 +228,13 @@ export default function Page() {
                 </p>
               )}
               {problem && <p className="quarantine-note">{problem}</p>}
+              {data && (
+                <p className="reading">
+                  {open
+                    ? "Every compared field matched and a target-local verifier passed, so the prior lesson is allowed to guide this case."
+                    : "A closed route is the intended outcome here: the evolved prompt refuses to transfer a lesson whose typed context does not match."}
+                </p>
+              )}
             </div>
 
             <div className="trace">

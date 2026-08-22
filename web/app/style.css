@@ -374,3 +374,9 @@ footer p { margin: 0; }
     transition: none !important;
   }
 }
+
+/* Run feedback: each route run visibly refreshes the outcome card. */
+.route-card .reading { margin: 0.8rem 0 0; font-size: 0.9rem; line-height: 1.55; opacity: 0.92; }
+@keyframes te-flash { 0% { transform: translateY(-3px); filter: brightness(1.12); } 100% { transform: none; filter: none; } }
+.outcome.flash { animation: te-flash 0.9s ease-out; }
+@media (prefers-reduced-motion: reduce) { .outcome.flash { animation: none; } }
