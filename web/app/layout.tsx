@@ -6,7 +6,7 @@ const description =
   "A read-only Walrus Sessions 7 lab: a recalled lesson walks a transfer route where every compared field is a checkpoint, evaluated by the committed canonical resolver.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://transfer-engine-krug.vercel.app"),
+  metadataBase: new URL("https://transfer-engine.vercel.app"),
   title,
   description,
   icons: {

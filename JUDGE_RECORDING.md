@@ -16,7 +16,7 @@ A remembered lesson travels only through a target route where every required com
 | Time | Screen / narration |
 
 | 0:00–0:10 | State: “Similarity is not permission.” Show exact baseline-to-evolved delta. |
-| 0:10–0:24 | Open the [interactive verification lab](https://transfer-engine-krug.vercel.app); open Navigator Wally, enter the target context, select a route, and keep its resolver trace visible. |
+| 0:10–0:24 | Open the [interactive verification lab](https://transfer-engine.vercel.app); open Navigator Wally, enter the target context, select a route, and keep its resolver trace visible. |
 | 0:24–0:38 | Run `make demo`; show how the target-local verifier establishes the compatible route. |
 | 0:38–0:50 | Show the same compatible case becomes applied only after the committed local verifier passes. |
 | 0:50–1:03 | Show the alternate issuer route and the named compatibility handling trace. |

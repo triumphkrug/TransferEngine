@@ -485,10 +485,10 @@ body { background: var(--bg); color: var(--fg); font-family: var(--sans); }
    ========================================================================== */
 
 :root {
-  --pass: #7ef2b0;
-  --deny: #ff6a4d;
-  --hold: #8fa7ff;
-  --quarantine: #ffc766;
+  --pass: #dfe104;
+  --deny: #ff5c33;
+  --hold: #fafafa;
+  --quarantine: #a1a1aa;
 }
 
 .outcome { grid-template-columns: minmax(0, 1fr); gap: 16px; }
