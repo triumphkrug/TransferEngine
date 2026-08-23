@@ -158,7 +158,7 @@ export default function Page() {
         <Logo />
         <nav aria-label="Sections">
           <a href="#lab">Transfer route</a>
-          <a href="#reproduce">Reproduce</a>
+          <a href="#evidence">Evidence</a>
           <a href="#evidence">Evidence</a>
         </nav>
       </header>
@@ -392,31 +392,6 @@ reasons       ${data?.canonical.reasons?.join("\n              ") ?? "…"}`}
               </pre>
             </div>
           </div>
-        </section>
-
-        <section id="reproduce" className="repro" aria-labelledby="repro-title">
-          <div>
-            <p className="kicker">Step 5 · CLI reproduction</p>
-            <h2 id="repro-title">The same resolver, outside the browser.</h2>
-            <p>
-              The page and the command line share one module. Nothing on this page is a mock, a simulated model, or a
-              hard-coded verdict.
-            </p>
-          </div>
-          <ol className="commands">
-            <li>
-              <code>node spec/lab.test.mjs</code>
-              <span>Asserts the exact route mapping this page renders, checkpoint by checkpoint.</span>
-            </li>
-            <li>
-              <code>make historical-replay</code>
-              <span>Adjudicates a real owner-authored commit interval against the same gate.</span>
-            </li>
-            <li>
-              <code>make prompt-contract</code>
-              <span>Removes each material prompt rule in turn and requires the gate to break.</span>
-            </li>
-          </ol>
         </section>
 
         <section id="evidence" className="evidence" aria-labelledby="evidence-title">
