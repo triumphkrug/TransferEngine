@@ -4,10 +4,21 @@
 
 [![receipts](https://img.shields.io/badge/mainnet%20receipts-10%20terminal%20rows-7b8cf7)](./docs/RECEIPTS.md)
 [![interactive lab](https://img.shields.io/badge/lab-run%20in%20browser-ff6a4d)](https://transfer-engine.vercel.app)
+[![tests](https://img.shields.io/github/actions/workflow/status/triumphkrug/TransferEngine/tests.yml?branch=main&label=tests)](https://github.com/triumphkrug/TransferEngine/actions/workflows/tests.yml)
 
 Evolved from [Exam Mistake Memory](https://github.com/EAZITECH1/exam-mistake-memory).
 
 ---
+
+## For judges — 60 seconds
+
+| | |
+| --- | --- |
+| **The evolved prompt** | [`PROMPT.md`](./PROMPT.md) — typed lesson records and the conjunctive compatibility gate |
+| **See it decide** | [transfer-engine.vercel.app](https://transfer-engine.vercel.app) — run a route, watch which checkpoint denies it |
+| **Reproduce it** | `make test && make demo` |
+| **Evidence** | [`docs/RECEIPTS.md`](./docs/RECEIPTS.md) — committed receipts and their boundary |
+| **What changed** | similarity may propose; only typed field equality and a target-local verifier may open the route |
 
 ## The failure that started this
 
