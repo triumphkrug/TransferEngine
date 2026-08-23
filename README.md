@@ -2,8 +2,6 @@
 
 **A remembered mistake is only useful when the next case is provably the same kind of case.**
 
-[![prompt contract](https://img.shields.io/badge/prompt%20contract-5%20material%20rules-dfe104)](./spec/prompt-contract.test.mjs)
-[![deterministic suite](https://img.shields.io/badge/make%20test-evaluator%20%C2%B7%20lab%20%C2%B7%20receipts%20%C2%B7%20secret%20scan-3ddc97)](./Makefile)
 [![receipts](https://img.shields.io/badge/mainnet%20receipts-10%20terminal%20rows-7b8cf7)](./docs/RECEIPTS.md)
 [![interactive lab](https://img.shields.io/badge/lab-run%20in%20browser-ff6a4d)](https://transfer-engine.vercel.app)
 
@@ -85,7 +83,7 @@ The gate is conjunctive across seven compared fields and one verification step, 
 rules in turn and requires the contract to fail, so the prompt text and the executable behaviour cannot drift
 apart silently.
 
-## Reproduce it in two commands
+## Quick start — Reproduce it in two commands
 
 ```bash
 make test
@@ -160,3 +158,5 @@ TransferEngine/
 
 [`JUDGE_RECORDING.md`](./JUDGE_RECORDING.md) is the 85–90 second recording plan: observed failure,
 deterministic guard, reproducible assertion, explicit evidence boundary.
+
+_Last verified against commit `3fde646dc7c623d4a5430d39e9eb27c24774d64b` on 2026-08-23._
