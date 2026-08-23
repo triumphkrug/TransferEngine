@@ -31,6 +31,73 @@ const STATE_TEXT: Record<string, string> = {
   "not-compared": "not compared"
 };
 
+const STATE_STAMP: Record<string, string> = {
+  match: "PASS",
+  diverges: "DENIED",
+  awaiting: "HELD",
+  "not-compared": "NOT COMPARED"
+};
+
+type Verdict = { word: string; meaning: string; tone: string };
+
+const VERDICTS: Record<string, Verdict> = {
+  applied: {
+    word: "APPLIED",
+    meaning:
+      "The remembered lesson is allowed to guide this case: every typed field carried the same value and the target-local verifier passed.",
+    tone: "pass"
+  },
+  rejected: {
+    word: "DENIED",
+    meaning:
+      "The route is closed. At least one safety-critical field carries a different typed value, so the old lesson stays with its own case.",
+    tone: "deny"
+  },
+  blocked: {
+    word: "HELD",
+    meaning:
+      "Matching fields are not permission. The transfer is held until a reviewed target-local verifier runs inside the target itself.",
+    tone: "hold"
+  },
+  rejected_transfer: {
+    word: "QUARANTINED",
+    meaning:
+      "The candidate carried instruction-shaped or secret-like text, so it was quarantined by the trust boundary before any field was compared.",
+    tone: "quarantine"
+  },
+  conflict: {
+    word: "ESCALATED",
+    meaning:
+      "Viable records disagree, so the choice is handed to the owner instead of being picked by similarity, rank, or recency.",
+    tone: "hold"
+  }
+};
+
+const FALLBACK_VERDICT: Verdict = {
+  word: "ESCALATED",
+  meaning: "The canonical resolver returned an outcome this surface does not map, so the case is escalated to the owner.",
+  tone: "hold"
+};
+
+const RULE_FOR_FIELD: Record<string, string> = {
+  domain: "Conjunctive compatibility gate — domain",
+  issuer_class: "Conjunctive compatibility gate — issuer class",
+  factor: "Conjunctive compatibility gate — factor",
+  threshold: "Typed threshold rule — no numeric or string coercion",
+  threshold_direction: "Typed threshold rule — direction compared independently",
+  rule_version: "Rule-version pinning — no drift across revisions",
+  scope: "Scope rule — applies_to must match exactly",
+  local_verification: "Mandatory reviewed target-local verifier"
+};
+
+function ruleFired(outcome: string | undefined, checkpoints: Checkpoint[]): string {
+  if (outcome === "rejected_transfer") return "Trust boundary — memory is data, never instruction or authority";
+  if (outcome === "applied") return "Mandatory reviewed target-local verifier — passed in the target";
+  const stopped = checkpoints.find((c) => c.state === "diverges" || c.state === "awaiting");
+  if (stopped) return RULE_FOR_FIELD[stopped.key] ?? "Conjunctive compatibility gate";
+  return "Fail-closed decision record";
+}
+
 export default function Page() {
   const [active, setActive] = useState("compatible");
   const [note, setNote] = useState("Intake packet from the new counterparty is attached for review.");
@@ -80,6 +147,8 @@ export default function Page() {
     ? (firstStop === -1 ? checkpoints.length : firstStop) / checkpoints.length
     : 0;
   const open = data?.canonical.outcome === "applied";
+  const verdict = data ? VERDICTS[data.canonical.outcome] ?? FALLBACK_VERDICT : null;
+  const firedRule = data ? ruleFired(data.canonical.outcome, checkpoints) : "";
 
   return (
     <div className="page">
@@ -224,9 +293,15 @@ export default function Page() {
               </li>
               {checkpoints.map((checkpoint, index) => (
                 <li key={checkpoint.key} className={`node cp cp-${checkpoint.state}`}>
-                  <span className="node-cap">Checkpoint {String(index + 1).padStart(2, "0")}</span>
+                  <span className="node-cap">
+                    Checkpoint {String(index + 1).padStart(2, "0")}
+                    <b className="cp-stamp">{STATE_STAMP[checkpoint.state] ?? checkpoint.state}</b>
+                  </span>
                   <strong>{checkpoint.label}</strong>
                   <small>{STATE_TEXT[checkpoint.state] ?? checkpoint.state}</small>
+                  {checkpoint.state !== "match" && (
+                    <small className="cp-rule">{RULE_FOR_FIELD[checkpoint.key] ?? "Conjunctive compatibility gate"}</small>
+                  )}
                 </li>
               ))}
               <li className={open ? "node node-target node-open" : "node node-target"}>
@@ -238,6 +313,43 @@ export default function Page() {
           </div>
 
           <div ref={outcomeRef} className={flash ? "outcome flash" : "outcome"} aria-live="polite">
+            <div className={`verdict verdict-${verdict?.tone ?? "hold"}`}>
+              <p className="verdict-meta">
+                {busy
+                  ? "Routing in the canonical resolver"
+                  : ranAt
+                    ? `Run ${runSeq} · ${ranAt}`
+                    : "Calling the canonical resolver"}
+              </p>
+              <p className="verdict-word">{verdict ? verdict.word : "ROUTING"}</p>
+              <p className="verdict-meaning">
+                {verdict ? verdict.meaning : "The canonical resolver is deciding this route."}
+              </p>
+              {data && (
+                <p className="verdict-rule">
+                  <span>Rule that fired</span>
+                  <b>{firedRule}</b>
+                </p>
+              )}
+            </div>
+
+            <div className="contrast">
+              <article className="contrast-col contrast-before">
+                <p className="contrast-cap">Without the evolved prompt</p>
+                <p>
+                  The past mistake comes back as a note. Nothing tests whether this case is the same kind of case,
+                  so the agent takes the same wrong route again on the next task that merely looks similar.
+                </p>
+              </article>
+              <article className="contrast-col contrast-after">
+                <p className="contrast-cap">With the evolved prompt</p>
+                <p>
+                  The same mistake is compiled into a transferable rule with checkpoints. The route is adjudicated
+                  field by field and deterministically, so the earlier failure cannot repeat here.
+                </p>
+              </article>
+            </div>
+
             <div className={open ? "route-card route-open" : "route-card"}>
               <p className="kicker">
                 {busy
