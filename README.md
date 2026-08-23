@@ -5,7 +5,7 @@
 [![prompt contract](https://img.shields.io/badge/prompt%20contract-5%20material%20rules-dfe104)](./spec/prompt-contract.test.mjs)
 [![deterministic suite](https://img.shields.io/badge/make%20test-evaluator%20%C2%B7%20lab%20%C2%B7%20receipts%20%C2%B7%20secret%20scan-3ddc97)](./Makefile)
 [![receipts](https://img.shields.io/badge/mainnet%20receipts-10%20terminal%20rows-7b8cf7)](./docs/RECEIPTS.md)
-[![interactive lab](https://img.shields.io/badge/lab-run%20in%20browser-ff6a4d)](https://transfer-engine-krug.vercel.app)
+[![interactive lab](https://img.shields.io/badge/lab-run%20in%20browser-ff6a4d)](https://transfer-engine.vercel.app)
 
 Evolved from [Exam Mistake Memory](https://github.com/EAZITECH1/exam-mistake-memory).
 
@@ -46,7 +46,7 @@ Every run answers three questions at a glance: which verdict came back (`APPLIED
 and a timestamp so a new run is never mistaken for the old one. Beside it, the same case is described with
 and without the evolved prompt.
 
-**Run it:** [transfer-engine-krug.vercel.app](https://transfer-engine-krug.vercel.app)
+**Run it:** [transfer-engine.vercel.app](https://transfer-engine.vercel.app)
 
 The page has no wallet, no provider key and no storage write. It calls the committed resolver in
 [`intelligence/evaluator.mjs`](./intelligence/evaluator.mjs) through
@@ -134,7 +134,7 @@ persistence. The browser lab proves the first one live; it makes no storage clai
 
 ## Where to go next
 
-1. **Open the lab** at [transfer-engine-krug.vercel.app](https://transfer-engine-krug.vercel.app), select
+1. **Open the lab** at [transfer-engine.vercel.app](https://transfer-engine.vercel.app), select
    *Divergent issuer domain*, and read the verdict and the rule that fired.
 2. **Reproduce it offline** with `make test && make demo`.
 3. **Read the prompt** in [`PROMPT.md`](./PROMPT.md), then delete a rule and watch

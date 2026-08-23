@@ -103,7 +103,7 @@ demo does not write to Mainnet, and I do not present it as if it did.
 
 ## Watching it decide
 
-The lab at [transfer-engine-krug.vercel.app](https://transfer-engine-krug.vercel.app) exists because the CLI
+The lab at [transfer-engine.vercel.app](https://transfer-engine.vercel.app) exists because the CLI
 proof convinces engineers and almost nobody else. It runs the same resolver through an API route — no mocked
 verdicts — and shows the run as a route: the source lesson on the left, each compared field as its own
 checkpoint with its own outcome, and the verdict at display size in colour, naming the rule that fired and
