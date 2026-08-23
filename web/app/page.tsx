@@ -152,12 +152,12 @@ export default function Page() {
 
   return (
     <div className="page">
-      <a className="skip" href="#lab">Skip to the transfer lab</a>
+      <a className="skip" href="#lab">Skip to the transfer route</a>
 
       <header className="masthead">
         <Logo />
         <nav aria-label="Sections">
-          <a href="#lab">Transfer lab</a>
+          <a href="#lab">Transfer route</a>
           <a href="#reproduce">Reproduce</a>
           <a href="#evidence">Evidence</a>
         </nav>
@@ -165,7 +165,7 @@ export default function Page() {
 
       <main>
         <section className="hero" aria-labelledby="title">
-          <p className="kicker">Walrus Sessions 7 · read-only agent lab</p>
+          <p className="kicker">A recalled lesson travels only as far as its checkpoints allow</p>
           <h1 id="title">
             <span>A lesson travels</span>
             <span className="accent">only as far</span>
@@ -210,7 +210,7 @@ export default function Page() {
               <p className="boundary">
                 No wallet, no provider key, no storage write. This page calls the committed resolver in{" "}
                 <code>intelligence/evaluator.mjs</code> over committed fixtures. Mainnet persistence is a
-                separate, committed evidence layer — it is not proven by this browser lab.
+                separate, committed evidence layer — it is not proven by this page.
               </p>
               <a className="hero-cta" href="#lab">Run a transfer route</a>
             </div>
@@ -399,22 +399,22 @@ reasons       ${data?.canonical.reasons?.join("\n              ") ?? "…"}`}
             <p className="kicker">Step 5 · CLI reproduction</p>
             <h2 id="repro-title">The same resolver, outside the browser.</h2>
             <p>
-              The page and the command line share one module. Nothing in this lab is a mock, a simulated model, or a
+              The page and the command line share one module. Nothing on this page is a mock, a simulated model, or a
               hard-coded verdict.
             </p>
           </div>
           <ol className="commands">
             <li>
-              <code>make test</code>
-              <span>Deterministic suite: evaluator, lab layer, receipts validation, secret scan.</span>
-            </li>
-            <li>
-              <code>make demo</code>
-              <span>Prints the same three routes in the terminal.</span>
-            </li>
-            <li>
               <code>node spec/lab.test.mjs</code>
-              <span>Asserts the exact route mapping this page renders.</span>
+              <span>Asserts the exact route mapping this page renders, checkpoint by checkpoint.</span>
+            </li>
+            <li>
+              <code>make historical-replay</code>
+              <span>Adjudicates a real owner-authored commit interval against the same gate.</span>
+            </li>
+            <li>
+              <code>make prompt-contract</code>
+              <span>Removes each material prompt rule in turn and requires the gate to break.</span>
             </li>
           </ol>
         </section>
@@ -424,12 +424,12 @@ reasons       ${data?.canonical.reasons?.join("\n              ") ?? "…"}`}
           <h2 id="evidence-title">Persistence proof lives in the repository, not in this page.</h2>
           <div className="evidence-grid">
             <article>
-              <h3>What this lab shows</h3>
+              <h3>What this page shows</h3>
               <p>Typed compatibility policy running in the canonical resolver over committed fixtures, in real time.</p>
             </article>
             <article>
               <h3>What it does not show</h3>
-              <p>No Mainnet write happens here. The browser lab makes no claim about live storage behaviour.</p>
+              <p>No Mainnet write happens here. This route console makes no claim about live storage behaviour.</p>
             </article>
             <article>
               <h3>Where the receipts are</h3>
@@ -444,7 +444,7 @@ reasons       ${data?.canonical.reasons?.join("\n              ") ?? "…"}`}
 
       <footer>
         <Logo compact />
-        <p>Transfer Engine · Walrus Sessions 7 · browser interaction is read-only</p>
+        <p>Similarity proposes a route here; only eight matching typed fields and a target-local verifier open it.</p>
       </footer>
     </div>
   );

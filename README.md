@@ -2,7 +2,7 @@
 
 > **A remembered mistake is only useful when the next case is provably the same kind of case.**
 
-[![lab](https://img.shields.io/badge/LAB-run%20in%20browser-ff6a4d?style=plastic)](https://transfer-engine.vercel.app)
+[![route console](https://img.shields.io/badge/ROUTE%20CONSOLE-adjudicate%20a%20transfer-ff6a4d?style=plastic)](https://transfer-engine.vercel.app)
 [![prompt](https://img.shields.io/badge/PROMPT-typed%20lesson%20records-dfe104?style=plastic)](./PROMPT.md)
 [![receipts](https://img.shields.io/badge/RECEIPTS-10%20terminal%20rows-7b8cf7?style=plastic)](./docs/RECEIPTS.md)
 [![tests](https://img.shields.io/github/actions/workflow/status/triumphkrug/TransferEngine/tests.yml?branch=main&label=TESTS&style=plastic)](https://github.com/triumphkrug/TransferEngine/actions/workflows/tests.yml)
@@ -91,7 +91,7 @@ policy.
 
 **[transfer-engine.vercel.app](https://transfer-engine.vercel.app)**
 
-![The Transfer Engine lab showing eight checkpoints, two of them denied, and a DENIED verdict naming the conjunctive compatibility gate on domain](./docs/media/lab-denied.png)
+![Target case 02, divergent issuer domain: eight checkpoints with 01 and 02 denied, and a DENIED verdict naming the field that failed](./docs/media/lab-denied.png)
 
 | Step | Do this | You should see |
 |---|---|---|
@@ -179,7 +179,7 @@ executable behaviour cannot drift apart silently.
 | [`ARTICLE.md`](./ARTICLE.md) | the write-up of the failure, the evolution and the numbers behind it |
 
 Three claims are kept separate on purpose: the deterministic policy result, the historical
-replay, and Mainnet persistence. The browser lab proves the first one live; it makes no
+replay, and Mainnet persistence. The route console proves the first one live; it makes no
 storage claim.
 
 ## §9 · Kit list
@@ -190,17 +190,17 @@ TransferEngine/
 ├── cases/            versioned typed risk cases
 ├── records/          receipt manifest, SDK proof, validator
 ├── replay/           pinned owner-history replay bundle
-├── spec/             evaluator, lab, prompt-contract, replay tests, secret scan
-├── docs/             receipts, prompt-to-test map, replay receipt, lab screenshot
+├── spec/             evaluator, console, prompt-contract, replay tests, secret scan
+├── docs/             receipts, prompt-to-test map, replay receipt, console screenshot
 ├── visuals/          rendered pipeline graphic
-├── web/              Next.js verification lab over the canonical resolver
+├── web/              Next.js route console over the canonical resolver
 ├── PROMPT.md · ARTICLE.md · DEMO.md · JUDGE_RECORDING.md
 └── Makefile
 ```
 
 ## §10 · Your next move
 
-1. **Deny a transfer on purpose** — [open the lab](https://transfer-engine.vercel.app), select *Divergent issuer domain*, read the rule that fired.
+1. **Deny a transfer on purpose** — [open the route console](https://transfer-engine.vercel.app), select *Divergent issuer domain*, read the rule that fired.
 2. **Reproduce it offline** — `make test && make demo`.
 3. **Adopt the record format** — copy [`PROMPT.md`](./PROMPT.md), then delete one rule and watch `spec/prompt-contract.test.mjs` refuse it.
 

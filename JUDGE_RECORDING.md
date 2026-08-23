@@ -1,39 +1,40 @@
-# Transfer Engine — judge-first recording script
+# Transfer Engine — recording runbook
 
-> **Record only after the owner has reviewed the final repository.** Use a clean terminal, a clean clone where the script requests one, and no credentials, wallet addresses, private paths, or cost-bearing writes.
+Record only after the owner has reviewed the final repository. No credentials, no wallet
+material, no live writes on screen.
 
-## One sentence
+**The claim being demonstrated:** a recalled lesson is applied only when eight typed
+checkpoints agree and a target-local verifier passes in the target.
 
-A remembered lesson travels only through a target route where every required compatibility field is established.
+## Before the camera starts
 
-## Recording contract
+```bash
+make test
+```
 
-- Duration target: **90 seconds**.
-- Use the repository’s real read-only commands only. Start with `make test` off-screen or briefly show its PASS summary.
-- Keep the source contract, evolved workflow, CLI assertion, and evidence view in one uninterrupted run.
-- Do not show a blob ID as fresh evidence without a recorded fresh terminal run and independent read.
+Open <https://transfer-engine.vercel.app> with target case **01 Aligned target case**
+selected. The eight checkpoint cards must be in frame.
 
-| Time | Screen / narration |
+## Segments — one field at a time
 
-| 0:00–0:10 | State: “Similarity is not permission.” Show exact baseline-to-evolved delta. |
-| 0:10–0:24 | Open the [interactive verification lab](https://transfer-engine.vercel.app); open Navigator Wally, enter the target context, select a route, and keep its resolver trace visible. |
-| 0:24–0:38 | Run `make demo`; show how the target-local verifier establishes the compatible route. |
-| 0:38–0:50 | Show the same compatible case becomes applied only after the committed local verifier passes. |
-| 0:50–1:03 | Show the alternate issuer route and the named compatibility handling trace. |
-| 1:03–1:16 | Run the owner-scoped historical replay only with its full authorized clone; otherwise omit this optional segment. |
+| Time | Screen | Spoken point |
+|---|---|---|
+| 0:00–0:12 | The two case descriptions side by side | "Same wording, same shape of question, different issuer domain. The recall was right; the transfer was not." |
+| 0:12–0:26 | Case 01, press **Run the route** | "Eight checkpoints pass, the target-local verifier passes, and only then: APPLIED." |
+| 0:26–0:44 | Switch to **02 Divergent issuer domain** | "Checkpoints 01 and 02 turn denied. The gate names the field instead of scoring a similarity." |
+| 0:44–0:58 | Switch to **03 No target-local verifier** | "Every compared field matches and the route still does not open. Compatibility is not authorisation." |
+| 0:58–1:12 | Paste an injection attempt into the operator note | "The note is scanned by the same trust boundary the CLI uses. It can never set a compared field." |
+| 1:12–1:26 | Terminal: `node spec/lab.test.mjs` | "The same route mapping the page just rendered, asserted in the suite." |
+| 1:26–1:38 | `docs/RECEIPTS.md` and the Walruscan link | "Persistence is a separate claim with its own evidence." |
 
-## On-screen claim
+## Closing line, mandatory
 
-> A lesson applies only when every safety-critical attribute and a committed target-local verifier agree.
+> Similarity proposes a candidate. A conjunctive typed gate and a reviewed target-local
+> verifier decide. No score, no financial advice, no new Mainnet write.
 
-## Mandatory last line
+## Check before publishing
 
-> The fixture does not produce a financial score or advice; historical replay is reproducible policy application, not a new Mainnet write.
-
-## Recording check
-
-- [ ] The final terminal output contains a deterministic PASS assertion.
-- [ ] The audience can see the source contract, target context, and evolved agent workflow.
-- [ ] Synthetic/historical status is named, not implied.
-- [ ] The receipt board is visibly separated from local policy output.
-- [ ] No key, secret, personal data, wallet private material, or live write is shown.
+- [ ] All three target cases appear, and the denied one names its field.
+- [ ] The run counter and timestamp are visible so no run is mistaken for an earlier one.
+- [ ] Historical replay is described as owner-scoped history, not as a live write.
+- [ ] No key, token, private path, or personal data is on screen.
