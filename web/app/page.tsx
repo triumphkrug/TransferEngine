@@ -210,7 +210,7 @@ export default function Page() {
               <p className="boundary">
                 No wallet, no provider key, no storage write. This page calls the committed resolver in{" "}
                 <code>intelligence/evaluator.mjs</code> over committed fixtures. Mainnet persistence is a
-                separate, committed evidence layer — it is not proven by this page.
+                committed receipt records — it is not proven by this page.
               </p>
               <a className="hero-cta" href="#lab">Run a transfer route</a>
             </div>
@@ -395,22 +395,20 @@ reasons       ${data?.canonical.reasons?.join("\n              ") ?? "…"}`}
         </section>
 
         <section id="evidence" className="evidence" aria-labelledby="evidence-title">
-          <p className="kicker">Separate evidence layer</p>
-          <h2 id="evidence-title">Persistence proof lives in the repository, not in this page.</h2>
+          <h2 id="evidence-title">Audit trail for a route that leaves the console</h2>
           <div className="evidence-grid">
             <article>
-              <h3>What this page shows</h3>
-              <p>Typed compatibility policy running in the canonical resolver over committed fixtures, in real time.</p>
+              <h3>Decision rendered here</h3>
+              <p>This console runs the canonical compatibility resolver over committed fixtures and makes each typed checkpoint visible.</p>
             </article>
             <article>
-              <h3>What it does not show</h3>
-              <p>No Mainnet write happens here. This route console makes no claim about live storage behaviour.</p>
+              <h3>Decision not rendered here</h3>
+              <p>A denied or admitted route in this console is not a storage event. The page does not open a wallet, invoke a live client, or write to Mainnet.</p>
             </article>
             <article>
-              <h3>Where the receipts are</h3>
+              <h3>Route receipts to inspect</h3>
               <p>
-                Committed terminal receipt rows and fresh-client cold-recall markers live in{" "}
-                <code>records/mainnet-receipts.json</code>, validated by <code>make test</code>.
+                <code>records/mainnet-receipts.json</code> contains committed terminal receipt rows and cold-recall markers; <code>make test</code> validates their shape.
               </p>
             </article>
           </div>
