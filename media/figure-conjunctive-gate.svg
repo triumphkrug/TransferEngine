@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" font-family="'DejaVu Sans', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B1A2A"/>
+      <stop offset="100%" stop-color="#0E2033"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)"/>
+
+  <text x="48" y="60" font-size="29" font-weight="700" fill="#EAF2F8">One closed checkpoint closes the route</text>
+  <text x="48" y="90" font-size="16" fill="#7C93A8">Six agreements do not outvote the seventh. Unknown counts as incompatible.</text>
+
+  <!-- source lesson -->
+  <rect x="48" y="132" width="216" height="152" rx="8" fill="#12293F" stroke="#2C4C6B" stroke-width="2"/>
+  <text x="68" y="162" font-size="11" font-weight="700" fill="#7C93A8" letter-spacing="1.4">SOURCE LESSON</text>
+  <text x="68" y="190" font-size="14" font-family="monospace" fill="#4ECDC4">risk:issuer-</text>
+  <text x="68" y="210" font-size="14" font-family="monospace" fill="#4ECDC4">proof:threshold</text>
+  <text x="68" y="238" font-size="13" fill="#A9BECD">rule version v2</text>
+  <text x="68" y="258" font-size="13" fill="#A9BECD">scope rwa-intake</text>
+  <text x="68" y="276" font-size="13" fill="#7C93A8">status: active</text>
+
+  <!-- route line -->
+  <path d="M272 208 L1152 208" stroke="#2C4C6B" stroke-width="2" stroke-dasharray="4 6"/>
+
+  <!-- checkpoints row 1 -->
+  <g>
+    <rect x="292" y="132" width="152" height="152" rx="8" fill="#2A1410" stroke="#FF5C39" stroke-width="2"/>
+    <text x="310" y="160" font-size="11" font-weight="700" fill="#FF5C39" letter-spacing="1.2">01 DENIED</text>
+    <text x="310" y="192" font-size="16" font-weight="700" fill="#EAF2F8">domain</text>
+    <text x="310" y="220" font-size="13" fill="#FF8B6E">values diverge</text>
+    <text x="310" y="248" font-size="12" fill="#B98C7E">conjunctive gate</text>
+    <text x="310" y="266" font-size="12" fill="#B98C7E">closed here</text>
+
+    <rect x="460" y="132" width="152" height="152" rx="8" fill="#2A1410" stroke="#FF5C39" stroke-width="2"/>
+    <text x="478" y="160" font-size="11" font-weight="700" fill="#FF5C39" letter-spacing="1.2">02 DENIED</text>
+    <text x="478" y="192" font-size="16" font-weight="700" fill="#EAF2F8">issuer class</text>
+    <text x="478" y="220" font-size="13" fill="#FF8B6E">values diverge</text>
+
+    <rect x="628" y="132" width="152" height="152" rx="8" fill="#12291F" stroke="#3E7A5E" stroke-width="2"/>
+    <text x="646" y="160" font-size="11" font-weight="700" fill="#6FD39B" letter-spacing="1.2">03 PASS</text>
+    <text x="646" y="192" font-size="16" font-weight="700" fill="#EAF2F8">factor</text>
+    <text x="646" y="220" font-size="13" fill="#8FBFA6">same typed value</text>
+
+    <rect x="796" y="132" width="152" height="152" rx="8" fill="#12291F" stroke="#3E7A5E" stroke-width="2"/>
+    <text x="814" y="160" font-size="11" font-weight="700" fill="#6FD39B" letter-spacing="1.2">04 PASS</text>
+    <text x="814" y="192" font-size="16" font-weight="700" fill="#EAF2F8">threshold</text>
+    <text x="814" y="214" font-size="16" font-weight="700" fill="#EAF2F8">value</text>
+    <text x="814" y="240" font-size="13" fill="#8FBFA6">0.75</text>
+
+    <rect x="964" y="132" width="188" height="152" rx="8" fill="#12291F" stroke="#3E7A5E" stroke-width="2"/>
+    <text x="982" y="160" font-size="11" font-weight="700" fill="#6FD39B" letter-spacing="1.2">05 PASS</text>
+    <text x="982" y="192" font-size="16" font-weight="700" fill="#EAF2F8">threshold</text>
+    <text x="982" y="214" font-size="16" font-weight="700" fill="#EAF2F8">direction</text>
+    <text x="982" y="240" font-size="13" fill="#8FBFA6">minimum</text>
+    <text x="982" y="266" font-size="12" fill="#5E8AA6">stored separately</text>
+  </g>
+
+  <!-- checkpoints row 2 -->
+  <g>
+    <rect x="292" y="308" width="152" height="132" rx="8" fill="#12291F" stroke="#3E7A5E" stroke-width="2"/>
+    <text x="310" y="336" font-size="11" font-weight="700" fill="#6FD39B" letter-spacing="1.2">06 PASS</text>
+    <text x="310" y="368" font-size="16" font-weight="700" fill="#EAF2F8">rule version</text>
+    <text x="310" y="396" font-size="13" fill="#8FBFA6">same typed value</text>
+
+    <rect x="460" y="308" width="152" height="132" rx="8" fill="#12291F" stroke="#3E7A5E" stroke-width="2"/>
+    <text x="478" y="336" font-size="11" font-weight="700" fill="#6FD39B" letter-spacing="1.2">07 PASS</text>
+    <text x="478" y="368" font-size="16" font-weight="700" fill="#EAF2F8">scope</text>
+    <text x="478" y="396" font-size="13" fill="#8FBFA6">same typed value</text>
+
+    <rect x="628" y="308" width="324" height="132" rx="8" fill="#141F30" stroke="#4C6480" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="646" y="336" font-size="11" font-weight="700" fill="#9DB2C6" letter-spacing="1.2">08 NOT COMPARED</text>
+    <text x="646" y="368" font-size="16" font-weight="700" fill="#EAF2F8">Target-local verifier</text>
+    <text x="646" y="396" font-size="13" fill="#9DB2C6">Never runs from memory. Must run</text>
+    <text x="646" y="416" font-size="13" fill="#9DB2C6">in the target, reviewed and allowlisted.</text>
+
+    <rect x="964" y="308" width="188" height="132" rx="8" fill="#141F30" stroke="#2C4C6B" stroke-width="2"/>
+    <text x="982" y="336" font-size="11" font-weight="700" fill="#7C93A8" letter-spacing="1.2">TARGET CASE</text>
+    <text x="982" y="366" font-size="15" font-weight="700" fill="#EAF2F8">Divergent</text>
+    <text x="982" y="388" font-size="15" font-weight="700" fill="#EAF2F8">issuer domain</text>
+    <text x="982" y="414" font-size="12" fill="#7C93A8">reads almost identically</text>
+  </g>
+
+  <!-- verdict -->
+  <rect x="48" y="476" width="1104" height="152" rx="8" fill="#2A1410" stroke="#FF5C39" stroke-width="3"/>
+  <text x="76" y="512" font-size="12" font-weight="700" fill="#FF8B6E" letter-spacing="1.4">RESULT OF THE CONJUNCTIVE GATE</text>
+  <text x="76" y="576" font-size="52" font-weight="700" fill="#FF5C39">DENIED</text>
+  <text x="330" y="548" font-size="16" fill="#EAF2F8">The route is closed. Two safety-critical fields carry different typed values,</text>
+  <text x="330" y="574" font-size="16" fill="#EAF2F8">so the old lesson stays with its own case.</text>
+  <text x="330" y="606" font-size="14" font-family="monospace" fill="#FF8B6E">rejected — domain: incompatible or unknown; issuer_class: incompatible or unknown</text>
+</svg>
