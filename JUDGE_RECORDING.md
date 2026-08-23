@@ -1,11 +1,10 @@
 # Transfer Engine — recording runbook
 
-Record only after the owner has reviewed the final repository. No credentials, no wallet
-material, no live writes on screen.
+Record after `triumphkrug` has approved the final repository. No credentials,
+wallet material, or cost-bearing writes anywhere in frame.
 
-**The claim being demonstrated:** a recalled lesson is applied only when eight typed
-checkpoints agree and a target-local verifier passes in the target.
-
+**What the 90 seconds must land:** a recalled lesson is applied only when eight
+typed checkpoints agree and a target-local verifier passes in the target.
 ## Before the camera starts
 
 ```bash
@@ -32,9 +31,9 @@ selected. The eight checkpoint cards must be in frame.
 > Similarity proposes a candidate. A conjunctive typed gate and a reviewed target-local
 > verifier decide. No score, no financial advice, no new Mainnet write.
 
-## Check before publishing
+## Gate the upload on these
 
 - [ ] All three target cases appear, and the denied one names its field.
-- [ ] The run counter and timestamp are visible so no run is mistaken for an earlier one.
-- [ ] Historical replay is described as owner-scoped history, not as a live write.
-- [ ] No key, token, private path, or personal data is on screen.
+- [ ] The run counter and timestamp are legible, so no run is mistaken for an earlier one.
+- [ ] Historical replay is described as owner-scoped history, never a live write.
+- [ ] No key, token, private path or personal data is visible at any point.
