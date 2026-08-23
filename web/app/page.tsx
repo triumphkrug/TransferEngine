@@ -115,15 +115,21 @@ export default function Page() {
           </div>
 
           <div className="hero-lower">
-            <figure className="hero-node">
-              <Image
-                src="/transfer-engine-navigator.png"
-                alt="A navigator studies a compass over a map with one verified route and one blocked route."
-                width={544}
-                height={900}
-                priority
-                sizes="(max-width: 860px) 60vw, 260px"
-              />
+            <figure className="route-figure" aria-hidden="true">
+              <svg viewBox="0 0 260 150" role="presentation">
+                <line x1="18" y1="40" x2="242" y2="40" strokeWidth="2" />
+                <line x1="18" y1="112" x2="242" y2="112" strokeWidth="2" strokeDasharray="6 6" />
+                <circle cx="18" cy="40" r="7" /><circle cx="242" cy="40" r="7" />
+                <circle cx="18" cy="112" r="7" /><circle cx="242" cy="112" r="7" className="blocked" />
+                <g className="ticks">
+                  <path d="M75 32 v16 M131 32 v16 M187 32 v16" strokeWidth="2" />
+                  <path d="M75 104 v16 M131 104 v16" strokeWidth="2" />
+                  <path d="M181 106 l12 12 M193 106 l-12 12" strokeWidth="2" className="cross" />
+                </g>
+                <text x="18" y="22">source lesson</text>
+                <text x="150" y="22">7 checkpoints pass</text>
+                <text x="18" y="140">3 pass · 1 mismatch</text>
+              </svg>
               <figcaption>Route adjudication</figcaption>
             </figure>
             <div className="hero-copy">
