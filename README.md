@@ -119,7 +119,7 @@ make demo
 ```
 
 `make test` runs the prompt-contract mutation check, the receipt-consistency check, the
-timeline validator, the evaluator and lab suites, and a repository secret scan.
+timeline validator, the evaluator and console suites, and a repository secret scan.
 
 `make demo` prints four screens:
 
@@ -130,7 +130,7 @@ timeline validator, the evaluator and lab suites, and a repository secret scan.
 | mismatch | `rejected — domain: incompatible or unknown; issuer_class: incompatible or unknown` |
 | boundary | the committed receipt-manifest summary |
 
-Run the lab locally:
+Run the route console locally:
 
 ```bash
 cd web && npm install && npm run build && npm start
@@ -186,7 +186,7 @@ storage claim.
 
 ```text
 TransferEngine/
-├── intelligence/     canonical evaluator, shared lab runner, CLI demo
+├── intelligence/     canonical evaluator, shared route runner, CLI demo
 ├── cases/            versioned typed risk cases
 ├── records/          receipt manifest, SDK proof, validator
 ├── replay/           pinned owner-history replay bundle
