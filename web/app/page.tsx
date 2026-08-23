@@ -158,8 +158,7 @@ export default function Page() {
         <Logo />
         <nav aria-label="Sections">
           <a href="#lab">Transfer route</a>
-          <a href="#evidence">Evidence</a>
-          <a href="#evidence">Evidence</a>
+          <a href="#evidence">Route audit</a>
         </nav>
       </header>
 
@@ -206,11 +205,6 @@ export default function Page() {
                 Transfer Engine recalls a prior typed lesson, then walks it along a transfer route.
                 Every compared field is a checkpoint. Similarity proposes the route; only matching
                 typed values and a target-local verifier open it.
-              </p>
-              <p className="boundary">
-                No wallet, no provider key, no storage write. This page calls the committed resolver in{" "}
-                <code>intelligence/evaluator.mjs</code> over committed fixtures. Mainnet persistence is a
-                committed receipt records — it is not proven by this page.
               </p>
               <a className="hero-cta" href="#lab">Run a transfer route</a>
             </div>
@@ -333,23 +327,6 @@ export default function Page() {
               )}
             </div>
 
-            <div className="contrast">
-              <article className="contrast-col contrast-before">
-                <p className="contrast-cap">Without the evolved prompt</p>
-                <p>
-                  The past mistake comes back as a note. Nothing tests whether this case is the same kind of case,
-                  so the agent takes the same wrong route again on the next task that merely looks similar.
-                </p>
-              </article>
-              <article className="contrast-col contrast-after">
-                <p className="contrast-cap">With the evolved prompt</p>
-                <p>
-                  The same mistake is compiled into a transferable rule with checkpoints. The route is adjudicated
-                  field by field and deterministically, so the earlier failure cannot repeat here.
-                </p>
-              </article>
-            </div>
-
             <div className={open ? "route-card route-open" : "route-card"}>
               <p className="kicker">
                 {busy
@@ -402,8 +379,8 @@ reasons       ${data?.canonical.reasons?.join("\n              ") ?? "…"}`}
               <p>This console runs the canonical compatibility resolver over committed fixtures and makes each typed checkpoint visible.</p>
             </article>
             <article>
-              <h3>Decision not rendered here</h3>
-              <p>A denied or admitted route in this console is not a storage event. The page does not open a wallet, invoke a live client, or write to Mainnet.</p>
+              <h3>What the route result means</h3>
+              <p>This is an adjudication over a fixed route and target case. Its purpose is to expose the compatibility decision, not to stand in for the archived route record.</p>
             </article>
             <article>
               <h3>Route receipts to inspect</h3>
