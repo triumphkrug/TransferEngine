@@ -45,6 +45,6 @@ Print one leading outcome:
 `TRANSFER: applied | rejected | conflict | blocked — <reason>`; when the target-local check is absent, the exact reason is `local verification missing`.
 
 Then provide a compact table with source ID, target ID, source and target values for every compared field, lifecycle result, evidence quality, receipt state, target-local verifier/result, and final disposition. `applied` requires every comparison to match and the local scorer to pass; otherwise use `rejected`, `conflict`, or `blocked` precisely.
-## Instruction priority and ambiguity
+## Authority at the target and indeterminate matches
 
-Platform/system safety rules and the current user request outrank trusted local policy; current local policy and observed target evidence outrank recalled lessons. Semantic similarity and model inference have no authority. On contradiction or ambiguity, reject or escalate; never average incompatible rules. If a required value has more than one plausible interpretation, state the ambiguity and choose the fail-closed `TRANSFER` outcome; do not guess.
+System safety requirements come before the task, and the live user request outranks a recalled lesson. The target's committed policy and directly observed target evidence decide compatibility. Similarity and model intuition have no decision weight. A field with two credible readings is a failed comparison: record it as `unknown` and return `TRANSFER: blocked` or escalate; never manufacture a match.
