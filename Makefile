@@ -2,7 +2,7 @@
 test: prompt-contract  evidence-check
 	node records/validate.mjs
 	node spec/evaluator.test.mjs
-	node spec/lab.test.mjs
+	node spec/route-console.test.mjs
 	node spec/secret-scan.mjs
 demo:
 	node intelligence/demo.mjs

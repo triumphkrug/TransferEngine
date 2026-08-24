@@ -23,7 +23,7 @@ selected. The eight checkpoint cards must be in frame.
 | 0:26–0:44 | Switch to **02 Divergent issuer domain** | "Checkpoints 01 and 02 turn denied. The gate names the field instead of scoring a similarity." |
 | 0:44–0:58 | Switch to **03 No target-local verifier** | "Every compared field matches and the route still does not open. Compatibility is not authorisation." |
 | 0:58–1:12 | Paste an injection attempt into the operator note | "The note is scanned by the same trust boundary the CLI uses. It can never set a compared field." |
-| 1:12–1:26 | Terminal: `node spec/lab.test.mjs` | "The same route mapping the page just rendered, asserted in the suite." |
+| 1:12–1:26 | Terminal: `node spec/route-console.test.mjs` | "The same route mapping the page just rendered, asserted in the suite." |
 | 1:26–1:38 | `docs/RECEIPTS.md` and the Walruscan link | "Persistence is a separate claim with its own evidence." |
 
 ## Closing line, mandatory

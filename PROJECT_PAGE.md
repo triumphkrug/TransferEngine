@@ -32,7 +32,7 @@ Even when all seven agree, the route stays closed until a reviewed target-local 
 
 ## §4 Two minutes as a judge
 
-Open the route console, select "Divergent issuer domain", and read the checkpoint that fired. Then `node spec/lab.test.mjs` asserts the same route mapping.
+Open the route console, select "Divergent issuer domain", and read the checkpoint that fired. Then `node spec/route-console.test.mjs` asserts the same route mapping.
 
 ## §5 Evidence, kept in separate boxes
 

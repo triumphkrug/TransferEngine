@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { runScenario, SCENARIOS } from '../../../../intelligence/lab.mjs';
+import { runScenario, SCENARIOS } from '../../../../intelligence/route-console.mjs';
 import cases from '../../../../cases/lessons.json';
 
 export const dynamic = 'force-dynamic';

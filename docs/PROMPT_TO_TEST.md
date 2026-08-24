@@ -5,7 +5,7 @@ listed deterministic checks; `tests/prompt-contract.test.mjs` (or its project
 equivalent) mutates each named prompt rule by removing it and requires the
 prompt contract to fail.
 
-**Test suite:** `spec/evaluator.test.mjs; spec/lab.test.mjs; spec/prompt-contract.test.mjs`
+**Test suite:** `spec/evaluator.test.mjs; spec/route-console.test.mjs; spec/prompt-contract.test.mjs`
 
 | Material prompt rule | Executable proof |
 | --- | --- |
