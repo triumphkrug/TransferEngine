@@ -152,12 +152,12 @@ export default function Page() {
 
   return (
     <div className="page">
-      <a className="skip" href="#lab">Skip to the transfer route</a>
+      <a className="skip" href="#route">Skip to the transfer route</a>
 
       <header className="masthead">
         <Logo />
         <nav aria-label="Sections">
-          <a href="#lab">Transfer route</a>
+          <a href="#route">Transfer route</a>
           <a href="#evidence">Route audit</a>
         </nav>
       </header>
@@ -206,17 +206,17 @@ export default function Page() {
                 Every compared field is a checkpoint. Similarity proposes the route; only matching
                 typed values and a target-local verifier open it.
               </p>
-              <a className="hero-cta" href="#lab">Run a transfer route</a>
+              <a className="hero-cta" href="#route">Run a transfer route</a>
             </div>
             <p className="hero-figure" aria-hidden="true">08</p>
           </div>
         </section>
 
-        <section id="lab" className="lab" aria-labelledby="lab-title">
+        <section id="route" className="lab" aria-labelledby="route-title">
           <div className="lab-head">
             <div>
               <p className="kicker">Step 1 · prompt and context</p>
-              <h2 id="lab-title">Route a recalled lesson into a new case</h2>
+              <h2 id="route-title">Route a recalled lesson into a new case</h2>
             </div>
             <p className="lab-head-note">
               The recalled lesson is fixed: <code>risk:issuer-proof:threshold</code>, rule version{" "}

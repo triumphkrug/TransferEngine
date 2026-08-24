@@ -91,7 +91,7 @@ policy.
 
 **[transfer-engine.vercel.app](https://transfer-engine.vercel.app)**
 
-![Target case 02, divergent issuer domain: eight checkpoints with 01 and 02 denied, and a DENIED verdict naming the field that failed](./docs/media/lab-denied.png)
+![Target case 02, divergent issuer domain: eight checkpoints with 01 and 02 denied, and a DENIED verdict naming the field that failed](./docs/media/route-denied.png)
 
 | Step | Do this | You should see |
 |---|---|---|
