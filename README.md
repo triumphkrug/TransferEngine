@@ -176,7 +176,6 @@ executable behaviour cannot drift apart silently.
 | [`records/live-sdk-proof-2026-08-21.json`](./records/live-sdk-proof-2026-08-21.json) | a current official-SDK write, terminal non-empty `blob_id`, destroy, and exact recall from a new client |
 | [`docs/PROMPT_TO_TEST.md`](./docs/PROMPT_TO_TEST.md) | every material prompt rule mapped to the check that proves it |
 | [`docs/REPLAY_RECEIPT.md`](./docs/REPLAY_RECEIPT.md) | the historical replay interval and its pinned outcome |
-| [`ARTICLE.md`](./ARTICLE.md) | the write-up of the failure, the evolution and the numbers behind it |
 
 Three claims are kept separate on purpose: the deterministic policy result, the historical
 replay, and Mainnet persistence. The route console proves the first one live; it makes no
@@ -194,7 +193,7 @@ TransferEngine/
 ├── docs/             receipts, prompt-to-test map, replay receipt, console screenshot
 ├── visuals/          rendered pipeline graphic
 ├── web/              Next.js route console over the canonical resolver
-├── PROMPT.md · ARTICLE.md · DEMO.md · JUDGE_RECORDING.md
+├── PROMPT.md · DEMO.md
 └── Makefile
 ```
 
@@ -204,7 +203,7 @@ TransferEngine/
 2. **Reproduce it offline** — `make test && make demo`.
 3. **Adopt the record format** — copy [`PROMPT.md`](./PROMPT.md), then delete one rule and watch `spec/prompt-contract.test.mjs` refuse it.
 
-[`JUDGE_RECORDING.md`](./JUDGE_RECORDING.md) is the 85–90 second recording plan: observed
-failure, deterministic guard, reproducible assertion, explicit evidence boundary.
+[`DEMO.md`](./DEMO.md) walks the same three routes end to end, with the exact commands and the
+evidence boundary spelled out.
 
 _Route fixtures and the contract map were checked on revision `3fde646dc7c623d4a5430d39e9eb27c24774d64b` (2026-08-23)._
