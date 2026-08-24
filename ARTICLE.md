@@ -78,7 +78,7 @@ Eight steps show per run: seven compared fields plus the verification step.
 
 ## The test I would look at first if I were judging
 
-`make test` runs the prompt-contract mutation check across five material rules, the evidence consistency check over the receipt manifest, the timeline validator, the evaluator suite, the route-console suite, and a repository-wide secret scan across 8,292 files.
+`make test` runs the prompt-contract mutation check across five material rules, the evidence consistency check over the receipt manifest, the timeline validator, the evaluator suite, the route-console suite, and a repository-wide secret scan over tracked content.
 
 The mutation check is the one that matters. It deletes each material rule from the prompt and requires the contract to fail. Anything that survives its own deletion was a sentence I felt good about writing, not a constraint the system honours.
 
