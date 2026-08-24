@@ -80,7 +80,7 @@ Eight steps show per run: seven compared fields plus the verification step.
 
 `make test` runs the prompt-contract mutation check across five material rules, the evidence consistency check over the receipt manifest, the timeline validator, the evaluator suite, the route-console suite, and a repository-wide secret scan across 8,292 files.
 
-The mutation check is the one that matters. It deletes each material rule from the prompt and requires the contract to fail. A rule that can be removed without breaking a test was never really enforced — it was a sentence you felt good about writing.
+The mutation check is the one that matters. It deletes each material rule from the prompt and requires the contract to fail. Anything that survives its own deletion was a sentence I felt good about writing, not a constraint the system honours.
 
 Persistence is kept in its own lane and stated separately. `records/mainnet-receipts.json` holds ten terminal receipt rows and five fresh-client cold-recall markers, inventoried in [`docs/RECEIPTS.md`](./docs/RECEIPTS.md), with one independently opened Walruscan link for `TE-01`. A receipt counts only after `rememberAndWait` returns terminal completion with a non-empty `blob_id`. Job IDs, timeouts and local digests are diagnostics. The demo writes nothing to Mainnet, and I do not present it as if it did.
 
@@ -115,4 +115,4 @@ That replays a pinned one-commit interval — an expansion of an MCP, anomaly, d
 
 **It decides about memory, not with memory.** Walrus Memory is append-only semantic retrieval — not a transactional database, not a trusted clock, not a permission system. The prompt treats it that way, which is why terminal receipts, cold recall from a fresh client, and local policy results stay three separate claims in this repository instead of one blended story.
 
-The useful part is smaller than the machinery around it. Storing what went wrong is the easy half. The half that decides whether an agent is worth trusting is knowing when a remembered lesson does not apply — and being able to say, in named fields, exactly why.
+The useful part is smaller than the machinery around it. Capturing a mistake is the part everyone builds. What decides whether an agent is worth trusting is the opposite move: recognising that a remembered lesson does not apply here, and being able to name the fields that closed it.

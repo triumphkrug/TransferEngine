@@ -5,9 +5,9 @@ the named owner.
 
 ## Medium fields
 
-- **Title:** The day my agent remembered correctly and was still wrong
-- **Subtitle:** Similarity proposes a candidate. It should never be the thing that decides.
-- **SEO title (<=60 chars where possible):** The day my agent remembered correctly and was still wrong
+- **Title:** The Lesson That Was Right and Still Gave Me the Wrong Answer
+- **Subtitle:** The recall was accurate and the lesson was real. The answer was wrong because nobody had written down whether it was allowed to travel.
+- **SEO title (<=60 chars where possible):** The Lesson That Was Right and Still Gave Me the Wrong Answer
 - **SEO description (meta, ~155 chars):** Semantic recall returns things that read alike. It has no opinion on whether the rule version changed. Why compatibility has to be a typed, conjunctive decision.
 - **Tags (max 5):** AI Agents, Prompt Engineering, Machine Learning, Walrus, Risk Management
 - **Cover image:** [`brand/article-banner.png`](./brand/article-banner.png) — 1200x630
@@ -17,9 +17,9 @@ the named owner.
 
 | Position | Asset | Caption |
 |---|---|---|
-| Top, under the title | `brand/article-banner.png` | Illustration. The failure and the changed behaviour, stated in one frame. |
-| After the "what changed" section | the architecture diagram in this repository | How the evolved prompt routes a recalled record. Illustration, not a run log. |
-| Before the evidence section | the demo screenshot in this repository | A real run of the committed resolver. The scenario named in the caption is the scenario shown. |
+| Top, under the title | `brand/article-banner.png` | Illustration. The failure and the changed behaviour in one frame. |
+| Figure 1, in the body where it is referenced | `media/figure-conjunctive-gate.png` | Seven typed checkpoints plus a target-local verifier. One closed checkpoint closes the route. Editable source: `media/figure-conjunctive-gate.svg`. |
+| Before the evidence section | `docs/media/route-denied.png` | Target case 02, divergent issuer domain, on the route console: DENIED, naming the field that failed. A real run of the committed resolver. |
 
 ## Distribution copy
 
@@ -33,4 +33,5 @@ the named owner.
 - [ ] Illustrations are captioned as illustrations; only real runs are called evidence.
 - [ ] Deterministic policy, historical replay and Mainnet persistence are named as separate claims.
 - [ ] The demo link resolves and the screenshots match the current site.
+- [ ] Figure 1 is uploaded with its caption and is labelled a diagram, not a run log.
 - [ ] No credential, private path, or personal data appears in any image.
