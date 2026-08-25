@@ -1,6 +1,6 @@
-# Demo Runbook — Transfer Engine
+# How to run the demo
 
-## Local recording sequence
+## Local sequence
 
 ```bash
 make test
@@ -14,10 +14,10 @@ make historical-replay KRUG_HISTORICAL_REPO=/path/to/owner-historical-repository
 4. Run the superficially similar target with an unregulated issuer. It returns `rejected` and names the incompatible field.
 5. The terminal ends at a separate receipt-board boundary: it structurally reports the committed manifest only, not a new write. Point to the regression test that blocks missing evidence, stale lifecycle, unknown attributes, and threshold drift.
 
-## Historical replay sequence
+## Replaying the historical interval
 
 6. Use the full owner-scoped historical clone and run the `make historical-replay` command above.
 7. The checker prints the selected direct interval: the MCP/anomaly/document/oracle expansion at `cf124f6…` and its immediate owner-authored security repair at `1bab9bc…`.
 8. Show the machine-checked policy result `applied` only after exact commit, author, changed-file, hardening-marker, and prompt-hash checks pass. This is a replay of a historical security repair; it does not score a live asset.
 
-## Claim boundary
+## What the demo does not claim

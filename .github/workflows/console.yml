@@ -1,20 +1,23 @@
-name: deterministic-checks
+name: console
+
 on:
   push:
-    branches: [main]
+    paths: ['web/**', '.github/workflows/console.yml']
   pull_request:
+    paths: ['web/**']
 
 jobs:
-  verify:
+  build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: '22.9.0'
           cache: npm
           cache-dependency-path: web/package-lock.json
-      - run: make test
       - run: npm --prefix web ci --ignore-scripts
       - run: npm --prefix web run typecheck
       - run: npm --prefix web run build

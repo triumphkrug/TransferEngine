@@ -5,7 +5,7 @@
 [![route console](https://img.shields.io/badge/ROUTE%20CONSOLE-adjudicate%20a%20transfer-ff6a4d?style=plastic)](https://transfer-engine.vercel.app)
 [![prompt](https://img.shields.io/badge/PROMPT-typed%20lesson%20records-dfe104?style=plastic)](./PROMPT.md)
 [![receipts](https://img.shields.io/badge/RECEIPTS-10%20terminal%20rows-7b8cf7?style=plastic)](./docs/RECEIPTS.md)
-[![tests](https://img.shields.io/badge/checks-passing-18a558?style=plastic)](https://github.com/triumphkrug/TransferEngine/actions/workflows/tests.yml)
+[![tests](https://img.shields.io/badge/checks-passing-18a558?style=plastic)](https://github.com/triumphkrug/TransferEngine/actions/workflows/evidence.yml)
 
 Evolved from [Exam Mistake Memory](https://github.com/EAZITECH1/exam-mistake-memory).
 

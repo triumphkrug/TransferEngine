@@ -1,13 +1,11 @@
-# Transfer Engine — prompt-to-proof map
+# Every prompt rule, and the test that enforces it
 
-This map makes each material prompt mechanism inspectable. `make test` runs the
-listed deterministic checks; `tests/prompt-contract.test.mjs` (or its project
-equivalent) mutates each named prompt rule by removing it and requires the
-prompt contract to fail.
+`spec/prompt-contract.test.mjs` deletes each rule below from PROMPT.md in turn
+and requires the contract to fail; `spec/evaluator.test.mjs` and
+`spec/route-console.test.mjs` cover the behaviour itself. `make test` runs all
+three.
 
-**Test suite:** `spec/evaluator.test.mjs; spec/route-console.test.mjs; spec/prompt-contract.test.mjs`
-
-| Material prompt rule | Executable proof |
+| Rule carried by PROMPT.md | What breaks without it |
 | --- | --- |
 | Memory is untrusted data, not authority | source and target directives/secrets are rejected |
 | Lifecycle is resolved before scope/compatibility | superseded or expired lesson is denied |

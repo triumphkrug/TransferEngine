@@ -1,8 +1,30 @@
-import fs from 'node:fs';
-const [manifestPath, checkpointPath=''] = process.argv.slice(2);
-const manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));const rows=manifest.receipts||manifest;
-const cold=rows.filter(r=>r.cold_recall?.status==='found'||r.cold_recall_result==='found');
-if(rows.length!==10||rows.some(r=>!r.blob_id)||cold.length!==5)throw new Error('receipt manifest must contain 10 non-empty IDs and 5 cold recalls');
-if(checkpointPath){const c=JSON.parse(fs.readFileSync(checkpointPath,'utf8'));if(c.evidence_status!=='mainnet_confirmed_10_of_10')throw new Error('checkpoint evidence status mismatch');for(const row of c.checkpoints)if(row.historical_outcome!=='no_separate_historical_receipt'||row.current_evidence!=='confirmed_mainnet_receipt')throw new Error('checkpoint historical/current evidence fields mismatch');}
-for(const doc of ['README.md','ARTICLE.md','DEMO.md'])if(fs.existsSync(doc)&&/Mainnet (receipts? )?remain pending|pending Mainnet/i.test(fs.readFileSync(doc,'utf8')))throw new Error(`stale Mainnet claim in ${doc}`);
-console.log(`evidence consistency: PASS (${rows.length} receipts; ${cold.length} cold recalls)`);
+import {readFileSync} from 'node:fs';
+
+const [manifestPath, checkpointPath] = process.argv.slice(2);
+if (!manifestPath) throw new Error('check-evidence: pass the receipt manifest path');
+
+const read = (p) => JSON.parse(readFileSync(p, 'utf8'));
+const manifest = read(manifestPath);
+const receipts = Array.isArray(manifest) ? manifest : manifest.receipts ?? [];
+
+const problems = [];
+if (receipts.length !== 10) problems.push(`stage count is ${receipts.length}, the published inventory says 10`);
+receipts.forEach((r, i) => {
+  if (!r.blob_id) problems.push(`stage ${i + 1} has no terminal blob_id`);
+});
+const cold = receipts.filter((r) => r.cold_recall?.status === 'found' || r.cold_recall_result === 'found');
+if (cold.length !== 5) problems.push(`cold recalls: ${cold.length}, published inventory says 5`);
+
+if (checkpointPath) {
+  const cp = read(checkpointPath);
+  if (cp.evidence_status !== 'mainnet_confirmed_10_of_10') problems.push('checkpoint evidence_status drifted');
+  for (const row of cp.checkpoints ?? []) {
+    if (row.mainnet_status !== 'confirmed' || !row.blob_id) problems.push(`checkpoint ${row.stage_id ?? '?'} is not backed by a confirmed receipt`);
+  }
+}
+
+if (problems.length) {
+  console.error(['receipt consistency: FAIL', ...problems.map((p) => `  - ${p}`)].join('\n'));
+  process.exit(1);
+}
+console.log(`receipt consistency: OK (${receipts.length} stages / ${cold.length} cold recalls)`);

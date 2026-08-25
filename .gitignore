@@ -1,12 +1,9 @@
-# Build output and local environment
-__pycache__/
-*.py[cod]
 node_modules/
-.env
-.env.*
-!.env.example
-*.log
-.DS_Store
 .next/
 out/
 *.tsbuildinfo
+.env
+.env.*
+!.env.example
+.DS_Store
+npm-debug.log*

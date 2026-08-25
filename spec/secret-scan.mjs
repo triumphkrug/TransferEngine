@@ -1,1 +1,26 @@
-import fs from 'node:fs';import path from 'node:path';let n=0;function w(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){if(e.name==='.git')continue;let p=path.join(d,e.name);if(e.isDirectory())w(p);else {n++;if(/ghp_[A-Za-z0-9]{20,}|MEMWAL_PRIVATE_KEY\s*=\s*[^'"\s]/.test(fs.readFileSync(p,'utf8')))throw Error(`secret-like content: ${p}`)}}}w('.');console.log(`secret scan: PASS (${n} files checked)`)
+import {execFileSync} from 'node:child_process';
+import {readFileSync} from 'node:fs';
+
+const tracked = execFileSync('git', ['ls-files'], {encoding: 'utf8'}).split('\n').filter(Boolean);
+const forbidden = [
+  /gh[pousr]_[A-Za-z0-9]{20,}/,
+  /github_pat_[A-Za-z0-9_]{30,}/,
+  /vcp_[A-Za-z0-9]{20,}/,
+  /(?:PRIVATE_KEY|DELEGATE_KEY|SECRET)\s*=\s*[^\s'"#]+/,
+];
+
+let checked = 0;
+const flagged = [];
+for (const file of tracked) {
+  if (file.endsWith('secret-scan.mjs')) continue;
+  let body;
+  try { body = readFileSync(file, 'utf8'); } catch { continue; }
+  checked += 1;
+  if (forbidden.some((rx) => rx.test(body))) flagged.push(file);
+}
+
+if (flagged.length) {
+  console.error(`secret scan: FAIL — credential-shaped content in ${flagged.join(', ')}`);
+  process.exit(1);
+}
+console.log(`secret scan: OK (${checked} tracked files)`);

@@ -1,18 +1,19 @@
-# Transfer Engine — replay receipt
+# Replay receipt
 
-## What is replayed
+**The interval.** One owner-authored security repair from this account's
+history, taken with its direct parent, and put through the transfer contract as
+a compatibility case.
 
-Owner-history replay: a known repair interval is evaluated as a transfer-compatibility case.
+**Running it.** `KRUG_HISTORICAL_REPO=<clone> make historical-replay`, or
+`make test`, which runs `spec/historical-replay.test.mjs` against the committed
+bundle in an isolated checkout. Pinned SHAs, changed paths and the expected
+disposition live in
+[`replay/historical-owner-replay.json`](../replay/historical-owner-replay.json).
 
-## Reproduce
+**The disposition.** The pinned interval must match exactly, the repair must be
+owner-authored, the hardening markers must be present in the diff, and the
+lesson must then satisfy every checkpoint before the transfer is applied.
 
-1. Run `make test`; it executes the self-contained historical replay test.
-2. Inspect [`replay/historical-owner-replay.json`](../replay/historical-owner-replay.json) for the pinned provenance and outcome fields.
-
-## Ground truth and policy result
-
-The committed bundle is cloned into an isolated temporary repository by `spec/historical-replay.test.mjs`; it verifies the pinned interval and the required transfer disposition.
-
-## Boundary
-
-The replay is deterministic historical policy evidence, not a new storage operation.
+**The limit.** This is local historical policy evidence over a committed
+bundle. It writes nothing, stores nothing, and claims nothing about provider
+behaviour.

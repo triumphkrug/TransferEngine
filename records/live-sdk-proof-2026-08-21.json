@@ -1,12 +1,15 @@
 {
-  "status":"proved",
-  "method":"Official @mysten-incubation/memwal 0.1.3 SDK: rememberAndWait reached terminal completion with a non-empty blob_id; the client was destroyed; a new client instance recalled the exact record in the same isolated namespace.",
-  "network":"mainnet",
-  "owner":"0x0453eac07deed6be0b845784031a43d84d9ffbc7c55f70ec3368342f40644cac",
-  "namespace":"walrus-session7/transfer-engine/triumphkrug/live-proof-1787292953",
-  "job_id":"64e65998-5785-4b78-bd16-142c03a489c0",
-  "blob_id":"qXPbccdG-u_kYHi7GQyUKkPigK47TxWVAe2RMhwUYKI",
-  "record_sha256":"be07b8265fcf793d2fda7172012868b9516fd0ab3c372c0eed39d61dc9a7adb0",
-  "fresh_client_recall":{"status":"found_exact_record","result_count":1},
-  "boundary":"This validates the current SDK write-and-fresh-client-recall path for this owner account. It is distinct from, and does not replace, the ten-checkpoint evidence manifest."
+  "status": "proved",
+  "method": "Proved with the official @mysten-incubation/memwal 0.1.3 SDK. rememberAndWait was awaited to terminal completion and returned a non-empty blob_id; the writing client was destroyed and a second, independently created client recalled the identical record from the same isolated namespace.",
+  "network": "mainnet",
+  "owner": "0x0453eac07deed6be0b845784031a43d84d9ffbc7c55f70ec3368342f40644cac",
+  "namespace": "walrus-session7/transfer-engine/triumphkrug/live-proof-1787292953",
+  "job_id": "64e65998-5785-4b78-bd16-142c03a489c0",
+  "blob_id": "qXPbccdG-u_kYHi7GQyUKkPigK47TxWVAe2RMhwUYKI",
+  "record_sha256": "be07b8265fcf793d2fda7172012868b9516fd0ab3c372c0eed39d61dc9a7adb0",
+  "fresh_client_recall": {
+    "status": "found_exact_record",
+    "result_count": 1
+  },
+  "boundary": "This validates the current SDK write-and-fresh-client-recall path for this owner account. It is distinct from, and does not replace, the ten-checkpoint evidence manifest."
 }

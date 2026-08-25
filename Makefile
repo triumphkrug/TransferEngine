@@ -8,11 +8,11 @@ demo:
 	node intelligence/demo.mjs
 
 historical-replay:
-	@test -n "$(KRUG_HISTORICAL_REPO)" || (echo "Set KRUG_HISTORICAL_REPO to a full owner-scoped clone"; exit 2)
+	@test -n "$(KRUG_HISTORICAL_REPO)" || (echo "KRUG_HISTORICAL_REPO must point at a full clone of the owner history"; exit 2)
 	KRUG_HISTORICAL_REPO="$(KRUG_HISTORICAL_REPO)" node scripts/check-historical-replay.mjs
 
 evidence-check:
-	node scripts/check-evidence.mjs records/mainnet-receipts.json
+	node scripts/check-evidence.mjs records/mainnet-receipts.json records/checkpoints.json
 
 prompt-contract:
 	node spec/prompt-contract.test.mjs
